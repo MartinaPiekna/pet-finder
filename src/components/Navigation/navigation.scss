@@ -8,9 +8,6 @@
   display: flex;
   justify-content: space-between;
   color: $color-grayMid;
-  @include desktop {
-    padding: 2rem 0;
-  }
   &__logo > img {
     width: 15%;
     height: auto;
@@ -47,17 +44,19 @@
 
   &__list {
     list-style: none;
+    padding: 0 30px;
     position: absolute;
     right: 0;
     top: 60px;
     background-color: $color-greenDark;
     z-index: 1;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     &--closed {
       display: none;
     }
-    @include desktop {
+    @include desktop { 
+      padding: 0;
       position: initial;
       list-style: none;
       background-color: transparent;
@@ -77,7 +76,7 @@
   }
 
   &__link {
-    color: white;
+    color: $color-grayMid;
     text-decoration: none;
     font-weight: bold;
     position: relative;

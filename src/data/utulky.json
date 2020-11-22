@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "kraj": "Hlavní město Praha",
+    "okres": "Praha",
+    "nazev": "Útulek pro opuštěná zvířata Troja",
+    "adresa": "V Zámcích 56\n186 00 Praha 8",
+    "telefon": "222 025 916",
+    "email": "upoz@mppraha.cz",
+    "provozni_doba": "po - pá: 9 - 17:00\nso - ne: 12 - 17:00",
+    "souradnice": [50.1371197, 14.3953494]
+  },
+  {
+    "id": 2,
+    "kraj": "Hlavní město Praha",
+    "okres": "Praha",
+    "nazev": "Azyl opuštěných zvířat Libeň",
+    "adresa": "Jeřábová 1\n190 00 Praha 9 -Libeň",
+    "telefon": "604 324 581",
+    "email": "utulek.liben@seznam.cz",
+    "provozni_doba": "út, čt, so, ne: 9 - 17:00\npo, st, pá: zavřeno",
+    "souradnice": [50.0997808, 14.50857]
+  },
+  {
+    "id": 3,
+    "kraj": "Hlavní město Praha",
+    "okres": "Praha",
+    "nazev": "Útulek Modřany",
+    "adresa": "U Soutoku 1662/10\n143 Praha 12 - Modřany",
+    "telefon": "603 932 930",
+    "email": "utulekmodrany@gmail.com",
+    "provozni_doba": "po, st, pá-ne: 9 - 16:00\nút: 9  - 17:30\nčt: 11 - 14:00",
+    "souradnice": [49.9915244, 14.4037661]
+  },
+  {
+    "id": 4,
+    "kraj": "Jihočeský kraj",
+    "okres": "České Budějovice",
+    "nazev": "Útulek pro opuštěná a handicapovaná zvířata České Budějovice",
+    "adresa": "Na Zlaté Stoce 3\n370 01 České Budějovice",
+    "telefon": "721 351 227\n387 772 158",
+    "email": "jkarlickova@zf.jcu.cz",
+    "provozni_doba": "po, pá: 9 - 15:00\nút, st, čt: 9 - 17:00\nso, ne: 9 - 12:00",
+    "souradnice": [48.9746458, 14.4556414]
+  },
+  {
+    "id": 5,
+    "kraj": "Jihomoravský kraj",
+    "okres": "Vyškov",
+    "nazev": "Útulek Tibet",
+    "adresa": "Marefy 44\n685 01 Bučovice",
+    "telefon": "608 818 627\n721 933 836",
+    "email": "utulek.tibet@seznam.cz",
+    "provozni_doba": "poslední sobota v měsíci: 13:00\npo domluvě",
+    "souradnice": [49.1465967, 16.9706217]
+  },
+  {
+    "id": 6,
+    "kraj": "Karlovarský kraj",
+    "okres": "Karlovy Vary",
+    "nazev": "Záchranná a odchytová služba pro zvířata",
+    "adresa": "Mostecká 135/1\n362 63 Dalovice",
+    "telefon": "605 058 410",
+    "email": "p.prokes-zosz@email.cz",
+    "provozni_doba": "po - ne: 8 - 22:00",
+    "souradnice": [50.2548367, 12.8862108]
+  },
+  {
+    "id": 7,
+    "kraj": "Kraj Vysočina",
+    "okres": "Jihlava",
+    "nazev": "Městský útulek pro opuštěná a nalezená zvířata Jihlava",
+    "adresa": "Telečská 649\n586 01 Jihlava",
+    "telefon": "721 282 895\n703 868 180",
+    "email": "utulek.jihlava@seznam.cz",
+    "provozni_doba": "po - pá: 8 - 18:30",
+    "souradnice": [49.3871617, 15.5747714]
+  },
+  {
+    "id": 8,
+    "kraj": "Královéhradecký kraj",
+    "okres": "Hradec Králové",
+    "nazev": "Útulek pro opuštěná zvířata",
+    "adresa": "Hradečnice 1980\n500 08 Hradec Králové",
+    "telefon": "731 131 216\n495 497 075",
+    "email": "horakova@tshk.cz",
+    "provozni_doba": "po, st - ne: 10 - 12:00, 13 - 17:00\nút: zavřeno",
+    "souradnice": [50.1885869, 15.8788106]
+  },
+  {
+    "id": 9,
+    "kraj": "Liberecký kraj",
+    "okres": "Liberec",
+    "nazev": "Archa Liberec",
+    "adresa": "Ostašovská 570\n460 11 Liberec",
+    "telefon": "485 106 412",
+    "email": "utulek@zooliberec.cz",
+    "provozni_doba": "po  - ne: 10:30 - 17:30",
+    "souradnice": [50.7715425, 15.0288147]
+  },
+  {
+    "id": 10,
+    "kraj": "Moravskoslezský kraj",
+    "okres": "Karviná",
+    "nazev": "MAX Útulek pro opuštěné psy a drobná zvířata",
+    "adresa": "Stará 1473/20\n735 64 Havířov - Prostřední Suchá",
+    "telefon": "596 412 412\n734 406 755",
+    "email": "utulek@tsh.cz",
+    "provozni_doba": "po -ne: 8 - 17: 00",
+    "souradnice": [49.8010044, 18.4596853]
+  },
+  {
+    "id": 11,
+    "kraj": "Olomoucký kraj",
+    "okres": "Přerov",
+    "nazev": "Útulek pro zatoulaná zvířata Přerov",
+    "adresa": "Na Hrázi 3165/17\n750 02 Přerov",
+    "telefon": "602 541 060",
+    "email": "utulek@tsmpr.cz",
+    "provozni_doba": "po, st, pá: 10 - 16:00\nso - ne: 8 - 11:00",
+    "souradnice": [49.4591269, 17.4394158]
+  },
+  {
+    "id": 12,
+    "kraj": "Pardubický kraj",
+    "okres": "Pardubice",
+    "nazev": "Městský útulek Pardubice",
+    "adresa": "Štrossova 239\n530 03 Pardubice",
+    "telefon": "737 754 989",
+    "email": "utulekpardubice@gmail.com",
+    "provozni_doba": "po - pá: 9 - 12:00, 13:30 - 15:30\nso - ne: 9 - 10:30",
+    "souradnice": [50.0350406, 15.7883967]
+  },
+  {
+    "id": 13,
+    "kraj": "Plzeňský kraj",
+    "okres": "Plzeň",
+    "nazev": "Útulek pro zvířata v nouzi - Městská policie Plzeň",
+    "adresa": "Daimlerova 12119\n301 00 Plzeň - Borská pole",
+    "telefon": "724 317 314",
+    "email": "os800@plzen.eu",
+    "provozni_doba": "po: zavřeno\nút - ne: 14 - 16:30",
+    "souradnice": [49.721855, 13.3313272]
+  },
+  {
+    "id": 14,
+    "kraj": "Středočeský kraj",
+    "okres": "Mělník",
+    "nazev": "Měststký útulek Neratovice",
+    "adresa": "Jedová 326\n277 11 Neratovice",
+    "telefon": "724 836 514\n602 277 244",
+    "email": "luciecervova@seznam.cz",
+    "provozni_doba": "po - čt: 15 - 17:00\npá: 13 - 15:00\nsudá so: 9 -11:00",
+    "souradnice": [50.2659672, 14.5239981]
+  },
+  {
+    "id": 15,
+    "kraj": "Ústecký kraj",
+    "okres": "Litoměřice",
+    "nazev": "Česká společnost přátel zvířat",
+    "adresa": "Řepnice 30\n412 01 Litoměřice",
+    "telefon": "602 893 442",
+    "email": "marek.maskulanis@seznam.cz",
+    "provozni_doba": "po, st, čt: 14 - 16:00\nso: 14 - 16:00\nút, pá, ne: zavřeno",
+    "souradnice": [50.5678953, 14.0565975]
+  },
+  {
+    "id": 16,
+    "kraj": "Zlínský kraj",
+    "okres": "Zlín",
+    "nazev": "Útulek pro zvířata v nouzi Zlín Vršava",
+    "adresa": "Mezilesí 628\n760 01 Zlín Vršava",
+    "telefon": "577 244 444",
+    "email": "utulekzlin@volny.cz",
+    "provozni_doba": "po, čt: zavřeno\nút, st, pá - ne: 14 - 16:00",
+    "souradnice": [49.2478464, 17.6874103]
+  }
+]
