@@ -7,7 +7,7 @@ import { Navigation } from './components/Navigation/Navigation.jsx';
 import { Form } from './components/Form/Form.jsx';
 // import { About } from './components/About/About.jsx';
 // import { Information } from './components/Information/Information.jsx';
-// import { Footer } from './components/Footer/Footer.jsx';
+import { Footer } from './components/Footer/Footer.jsx';
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
             <Route path="/about" /*component={About}*/ />
           </Switch>
         </main>
-        <footer>{/* <Footer /> */}</footer>
+        <Footer />
       </Router>
     </>
   );
