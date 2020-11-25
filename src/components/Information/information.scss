@@ -1,0 +1,33 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.information {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  border: 1px solid black;
+
+  &__headline {
+    text-align: center;
+  }
+
+  &__sectionShown {
+    background-color: red;
+  }
+
+  &__sectionHidden {
+    display: none;
+  }
+  &__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &--active {
+     color: red;
+    }
+    &--nonactive{
+      color: initial;
+    }
+  }
+}
