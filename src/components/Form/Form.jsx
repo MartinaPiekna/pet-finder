@@ -11,6 +11,7 @@ export const Form = () => {
   const [checked, setChecked] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [record, setSaveRecord] = useState({
+    typeOfRecord: '',
     description: '',
     type: '',
     phone: '',
@@ -20,8 +21,10 @@ export const Form = () => {
     location: {},
   });
 
+  console.log(record);
+
   const types = ['pes', 'kočka', 'ptactvo'];
-  const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.\'\-]+$/;
+  const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.'-]+$/;
 
   let history = useHistory();
 
@@ -65,6 +68,44 @@ export const Form = () => {
       <div className="form">
         <h1 className="form__headline">Vyplňte, prosím informace o ztrátě:</h1>
         <hr className="form__divider" />
+        <div className="form__switch-container">
+          <div className="form__switches">
+            <input
+              className="form__switch"
+              type="radio"
+              id="lost"
+              name="typeOfRecord"
+              onChange={() => {
+                setSaveRecord((record) => ({
+                  ...record,
+                  typeOfRecord: 'lost',
+                }));
+              }}
+              required
+            />
+            <label className="form__switch-label" htmlFor="lost">
+              Ztratil/a jsem
+            </label>
+          </div>
+          <div className="form__switches">
+            <input
+              className="form__switch"
+              type="radio"
+              id="found"
+              name="typeOfRecord"
+              onChange={() => {
+                setSaveRecord((record) => ({
+                  ...record,
+                  typeOfRecord: 'found',
+                }));
+              }}
+              required
+            />
+            <label className="form__switch-label" htmlFor="found">
+              Nalezl/a jsem
+            </label>
+          </div>
+        </div>
         <form onSubmit={onSubmit} className="form__main">
           <label className="form__label" htmlFor="image">
             Fotografie zvířete
@@ -74,8 +115,8 @@ export const Form = () => {
           )}
           <img
             className="form__photo"
-            width="100"
-            height="100"
+            width="250"
+            height="200"
             src={progress === 100 ? record.urlImage : emptyImage}
             alt="photo"
           />
@@ -88,39 +129,43 @@ export const Form = () => {
             onChange={onFileChange}
           />
 
-          <label className="form__label" htmlFor="name">
+          <label className="form__label" htmlFor="type">
             Druh zvířete:{' '}
           </label>
           <div className="form__type-container">
-            {types.map((type) => (
-              <div key={type} className="form__types">
-                <input
-                  className="form__type"
-                  type="radio"
-                  id="names"
-                  name="names"
-                  onChange={() => setChecked(false)}
-                  value={record.type}
-                  required
-                />
-                <label className="form__type-label" htmlFor="name">
-                  {type}
-                </label>
-              </div>
-            ))}
+            {types.map((type) => {
+              return (
+                <div key={type} className="form__types">
+                  <input
+                    className="form__type"
+                    type="radio"
+                    id={type}
+                    name="type"
+                    onChange={() => {
+                      setChecked(false),
+                        setSaveRecord((record) => ({
+                          ...record,
+                          type,
+                        }));
+                    }}
+                    value={type}
+                    required
+                  />
+                  <label className="form__type-label" htmlFor="name">
+                    {type}
+                  </label>
+                </div>
+              );
+            })}
             <div className="form__types">
               <input
                 className="form__type"
                 type="radio"
-                id="names"
-                name="names"
-                value={record.type}
-                onChange={(e) => {
+                id="name"
+                name="name"
+                value=""
+                onChange={() => {
                   setChecked(!checked);
-                  setSaveRecord((record) => ({
-                    ...record,
-                    type: e.target.value,
-                  }));
                 }}
                 required
               />
@@ -135,10 +180,13 @@ export const Form = () => {
               type="text"
               id="name"
               name="name"
-              value={record.type}
-              onChange={(e) =>
-                setSaveRecord((record) => ({ ...record, type: e.target.value }))
-              }
+              onChange={(e) => {
+                const type = e.target.value;
+                setSaveRecord((record) => ({
+                  ...record,
+                  type,
+                }));
+              }}
               required={checked}
               placeholder="jiný druh"
               pattern={regexp}
@@ -167,36 +215,41 @@ export const Form = () => {
             placeholder="Zde popište vaše ztracené zvíře..."
             required
           />
-          <div className="form__shelters">
-            <label className="form__label" htmlFor="shelter">
-              Útulek:
-            </label>
-            <select
-              className="form__shelter-select"
-              id="shelter"
-              name="shelter"
-            >
-              <option
-                className="form__shelter-option"
-                value="none"
-                defaultValue
+          {record.typeOfRecord === 'found' ? (
+            <div className="form__shelters">
+              <label className="form__label" htmlFor="shelter">
+                Útulek:
+              </label>
+              <select
+                className="form__shelter-select"
+                id="shelter"
+                name="shelter"
               >
-                Vyberte útulek...
-              </option>
-              {shelters.map((shelter) => (
                 <option
                   className="form__shelter-option"
-                  key={shelter.id}
-                  value={shelter.id}
+                  value="none"
+                  defaultValue
                 >
-                  {shelter.nazev}
+                  Vyberte útulek...
                 </option>
-              ))}
-            </select>
-            <em className="form__shelter--emphisize">
-              *V případě, že se zvíře nenachází v útulku, vyberte místo na mapě.
-            </em>
-          </div>
+                {shelters.map((shelter) => (
+                  <option
+                    className="form__shelter-option"
+                    key={shelter.id}
+                    value={shelter.id}
+                  >
+                    {shelter.nazev}
+                  </option>
+                ))}
+              </select>
+              <em className="form__shelter--emphisize">
+                *V případě, že se zvíře nenachází v útulku, vyberte místo na
+                mapě.
+              </em>
+            </div>
+          ) : (
+            <br />
+          )}
           <label className="form__label-map" htmlFor="map">
             <div className="form__map">
               {' '}

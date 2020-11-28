@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './about.scss';
-import img1 from "./img/homepage_desktop.png"
-import img2 from "./img/homepage_tablet.png"
-import img3 from "./img/homepage_mobile.png"
 import { Us } from "./Us.jsx"
 import { usInfo } from "./us.js"
 
