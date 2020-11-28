@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../../db.js';
 import {
   GoogleMap,
   withGoogleMap,

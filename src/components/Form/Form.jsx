@@ -19,7 +19,6 @@ export const Form = () => {
     urlImage: '',
     location: {},
   });
-  const [isMarkerShown, setIsMarkerShown] = useState(false);
 
   const types = ['pes', 'kočka', 'ptactvo'];
   const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.\'\-]+$/;
@@ -58,7 +57,6 @@ export const Form = () => {
     db.collection('ztrata')
       .add(record)
       .then((document) => history.push(`/detail/${document.id}`));
-
     setDisabled(true);
   };
 
