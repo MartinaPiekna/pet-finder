@@ -15,7 +15,6 @@ export const Detail = () => {
       .get()
       .then(
         (document) => {
-          console.log(document);
           const data = document.data();
           console.log(data);
           setRecord(data);

@@ -54,9 +54,17 @@
     display: flex;
     justify-content: center;
     margin: 0 0 20px;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
-
   &__type,
   &__description,
   &__email,

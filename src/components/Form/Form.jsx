@@ -115,8 +115,8 @@ export const Form = () => {
           )}
           <img
             className="form__photo"
-            width="100"
-            height="100"
+            width="250"
+            height="200"
             src={progress === 100 ? record.urlImage : emptyImage}
             alt="photo"
           />
