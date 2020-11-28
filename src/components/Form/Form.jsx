@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import shelters from '../../data/utulky.json';
 import './form.scss';
 import { db, storage } from '../../db.js';
@@ -18,8 +19,9 @@ export const Form = () => {
   });
 
   const types = ['pes', 'kočka', 'ptactvo'];
-
   const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.\'\-]+$/;
+
+  let history = useHistory();
 
   const onFileChange = (e) => {
     const image = e.target.files[0];
@@ -50,7 +52,10 @@ export const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    db.collection('ztrata').add(record);
+    db.collection('ztrata')
+      .add(record)
+      .then((document) => history.push(`/detail/${document.id}`));
+
     setDisabled(true);
   };
 

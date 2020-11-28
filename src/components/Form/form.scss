@@ -10,6 +10,7 @@
   padding: 10px;
   width: 80%;
   max-width: 700px;
+  font-family: $comfortaa;
   background-color: $color-white;
   margin: 1rem 0 2rem;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -224,6 +225,7 @@
     }
     &:disabled {
       border: 2px solid $color-gray;
+      background-color: $color-white;
       cursor: default;
       &:hover,
       &:focus {
