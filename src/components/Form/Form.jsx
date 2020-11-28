@@ -4,6 +4,7 @@ import shelters from '../../data/utulky.json';
 import './form.scss';
 import { db, storage } from '../../db.js';
 import emptyImage from '../../assets/img/empty_image.svg';
+import { MapForm } from '../MapForm.jsx/MapForm.jsx';
 
 export const Form = () => {
   const [progress, setProgress] = useState(0);
@@ -191,7 +192,19 @@ export const Form = () => {
             </em>
           </div>
           <label className="form__label-map" htmlFor="map">
-            <div className="form__map">Mapa</div>
+            <div className="form__map">
+              {' '}
+              <div style={{ width: '100vw', height: '200px' }}>
+                <MapForm
+                  googleMapURL={
+                    'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAJiOxHuDPq_5Z9NpUgwgWm5EQS14zbAe0'
+                  }
+                  loadingElement={<div style={{ height: '100%' }} />}
+                  containerElement={<div style={{ height: '100%' }} />}
+                  mapElement={<div style={{ height: '100%' }} />}
+                />
+              </div>
+            </div>
           </label>
 
           <label className="form__label" htmlFor="phone">
