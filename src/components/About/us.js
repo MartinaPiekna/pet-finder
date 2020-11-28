@@ -1,6 +1,3 @@
-"use strict";
-import martinaPic from "./img/martina.png"
-import barboraPic from "./img/barbora.png"
 
 export const usInfo = [
   {about: "O Martině",
