@@ -1,21 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from '../../db.js';
 import {
   GoogleMap,
   withGoogleMap,
   withScriptjs,
   Marker,
 } from 'react-google-maps';
-import logo from '../../assets/img/location.svg';
 
-export const MapForm = withScriptjs(
-  withGoogleMap((props) => {
-    const [lostLocation, setLostLocation] = useState([]);
+export const MapForm = withScriptjs(withGoogleMap(({ onChangePosition }) => {
+    const [marker, setMarker] = useState({
+      lat: 50.0,
+      lng: 14.5,
+    });
+
+    useEffect(() => {
+      onChangePosition(marker);
+    }, [marker]);
+
     return (
       <>
-        <GoogleMap defaultZoom={8} defaultCenter={{ lat: 50.0, lng: 15.5 }}>
-          {props.isMarkerShown && (
-            <Marker position={{ lat: -34.397, lng: 150.644 }} />
-          )}
+        <GoogleMap
+          onClick={(event) => {
+            setMarker({
+              lat: event.latLng.lat(),
+              lng: event.latLng.lng(),
+            });
+          }}
+          defaultZoom={6.8}
+          defaultCenter={{ lat: 50.0, lng: 15.5 }}
+        >
+          <Marker
+            draggable
+            onDragEnd={(event) => {
+              setMarker({
+                lat: event.latLng.lat(),
+                lng: event.latLng.lng(),
+              });
+            }}
+            position={marker}
+          />
         </GoogleMap>
       </>
     );

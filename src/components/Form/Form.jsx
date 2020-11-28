@@ -17,7 +17,9 @@ export const Form = () => {
     email: '',
     date: '',
     urlImage: '',
+    location: {},
   });
+  const [isMarkerShown, setIsMarkerShown] = useState(false);
 
   const types = ['pes', 'kočka', 'ptactvo'];
   const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.\'\-]+$/;
@@ -194,14 +196,30 @@ export const Form = () => {
           <label className="form__label-map" htmlFor="map">
             <div className="form__map">
               {' '}
-              <div style={{ width: '100vw', height: '200px' }}>
+              <div
+                style={{
+                  width: '100vw',
+                  height: '400px',
+                }}
+              >
                 <MapForm
+                  onChangePosition={(position) =>
+                    setSaveRecord({
+                      ...record,
+                      location: {
+                        latitude: position.lat,
+                        longitude: position.lng,
+                      },
+                    })
+                  }
                   googleMapURL={
                     'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAJiOxHuDPq_5Z9NpUgwgWm5EQS14zbAe0'
                   }
                   loadingElement={<div style={{ height: '100%' }} />}
                   containerElement={<div style={{ height: '100%' }} />}
-                  mapElement={<div style={{ height: '100%' }} />}
+                  mapElement={
+                    <div style={{ height: '100%', borderRadius: '5px' }} />
+                  }
                 />
               </div>
             </div>
