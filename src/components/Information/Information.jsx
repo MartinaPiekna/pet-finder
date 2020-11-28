@@ -20,7 +20,7 @@ export const Information = () => {
                 setVisible([true, false, false]);
               }}
             >
-              Našlo se zvíře
+              Útulky v ČR
             </button>
             <button
               className={
@@ -32,7 +32,7 @@ export const Information = () => {
                 setVisible([false, true, false]);
               }}
             >
-              Hledám zvíře
+              Hledá se zvíře
             </button>
             <button
               className={
@@ -44,7 +44,7 @@ export const Information = () => {
                 setVisible([false, false, true]);
               }}
             >
-              Útulky v ČR
+              Nalezlo se zvíře
             </button>
           </div>
 
