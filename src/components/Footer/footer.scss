@@ -2,10 +2,10 @@
 @import '../../assets/mixins.scss';
 
 .footer {
-  background-color: $color-greenDark;
   padding: 1rem 0;
   width: 100vw;
   display: flex;
   justify-content: center;
   color: $color-grayMid;
+  background-color: transparent;
 }

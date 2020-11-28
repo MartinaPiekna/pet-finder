@@ -7,6 +7,7 @@ import { Navigation } from './components/Navigation/Navigation.jsx';
 import { Form } from './components/Form/Form.jsx';
 import { About } from './components/About/About.jsx';
 import { Information } from './components/Information/Information.jsx';
+import { Detail } from './components/Detail/Detail.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
 
 const App = () => {

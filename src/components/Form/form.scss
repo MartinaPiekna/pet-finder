@@ -1,20 +1,234 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 15px;
+  padding: 10px;
+  width: 80%;
+  max-width: 700px;
+  background-color: $color-white;
+  margin: 1rem 0 2rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
   &__headline {
-    margin: 1rem 0;
+    margin: 1rem;
+    @include font-size(22px);
+    text-align: center;
+    @include desktop {
+      @include font-size(28px);
+    }
   }
+
+  &__divider {
+    width: 70%;
+    border: 2px solid $color-yellow;
+  }
+
   &__main {
-    margin: 1rem 0;
+    max-width: 90%;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  &__photo-label {
+
+  &__label {
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 20px 0 3px;
+    @include font-size(16px);
+    @include desktop {
+      @include font-size(22px);
+    }
+  }
+
+  progress::-webkit-progress-value {
+    background-color: $color-yellow !important;
+    color: $color-yellow !important;
+  }
+
+  &__photo-input {
+    border-radius: 25px;
+    width: 154px;
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    &::before {
+      content: 'Vybrat fotografii';
+      display: inline-block;
+      border-radius: 25px;
+      padding: 10px 20px;
+      color: $color-black;
+      border: 1px solid $color-yellow;
+      outline: none;
+      cursor: pointer;
+      @include font-size(16px);
+    }
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 186, 0, 0.1);
+    }
+  }
+
+  &__type-label {
+    position: relative;
+  }
+
+  input[type='radio'] {
+    margin-right: 10px;
+  }
+
+  input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -5px;
+    margin-right: 5px;
+    position: relative;
+    background-color: $color-white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1.5px solid$color-yellow;
+    cursor: pointer;
+  }
+
+  input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -5px;
+    position: relative;
+    background-color: $color-yellow;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1.5px solid$color-yellow;
+  }
+
+  &__photo {
+    margin: 3px 0 3px 0;
+  }
+
+  &__type-input,
+  &__phone,
+  &__email,
+  &__date {
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 5px;
+    border: 1px solid $color-yellow;
+  }
+
+  &__types {
+    margin: 5px 0;
+  }
+
+  &__description {
+    border-radius: 10px;
+    border: 1px solid $color-yellow;
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  &__shelters {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  &__shelter-select {
+    width: 90%;
+    border-radius: 25px;
+    border: 1px solid $color-yellow;
+    padding: 10px 20px;
+    @include desktop {
+      width: 85%;
+    }
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    color: $color-gray;
+    font-family: $comfortaa;
+  }
+
+  ::placeholder {
+    color: $color-gray;
+    font-family: $comfortaa;
+  }
+
+  &__shelter--emphisize {
+    @include font-size(12px);
+    margin-top: 5px;
+  }
+
+  &__map {
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: $color-gray;
+  }
+
+  &__label-map {
+    width: 93%;
+  }
+
+  [type='date'] {
+    background: #fff url('../../assets//img/calendar.svg') 90% 50% no-repeat;
+  }
+
+  [type='date']::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  [type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  input[type='date'] {
+    font-family: $comfortaa;
+    color: $color-gray;
+  }
+
+  &__button {
+    border-radius: 25px;
+    width: 150px;
+    border: none;
+    margin-top: 25px;
+    border: 2px solid $color-yellow;
+    background-color: $color-yellow;
+    padding: 7px 15px;
+    @include font-size(22px);
+    font-weight: normal;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 186, 0, 0.8);
+      border-color: rgba(255, 186, 0, 0.8);
+    }
+    &:disabled {
+      border: 2px solid $color-gray;
+      cursor: default;
+      &:hover,
+      &:focus {
+        background-color: $color-white;
+      }
+    }
   }
 }
