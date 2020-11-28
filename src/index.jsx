@@ -23,6 +23,7 @@ const App = () => {
             <Route path="/new" component={Form} />
             <Route path="/info" component={Information} />
             <Route path="/about" component={About} />
+            <Route path="/detail" component={Detail} />
           </Switch>
         </main>
         <Footer />
