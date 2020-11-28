@@ -9,6 +9,7 @@ import { About } from './components/About/About.jsx';
 import { Information } from './components/Information/Information.jsx';
 import { Detail } from './components/Detail/Detail.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
+import { Home } from './components/Home/Home.jsx';
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
         </header>
         <main>
           <Switch>
-            <Route exact path="/" /*component={Home}*/ />
+            <Route exact path="/" component={Home} />
             <Route path="/new" component={Form} />
             <Route path="/info" component={Information} />
             <Route path="/detail" component={Detail} />
