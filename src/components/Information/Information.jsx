@@ -48,13 +48,13 @@ export const Information = () => {
             </button>
           </div>
 
-          <article className={visible[0] ? 'information__sectionHidden' : 'information__sectionShown'}>
+          <article className={visible[0] ? 'information__sectionShown' : 'information__sectionHidden'}>
             PRVNI Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Omnis maxime pariatur ipsa error dicta nulla facilis enim eaque nam
             explicabo a mollitia ea velit accusantium, delectus aliquid hic
             inventore consequuntur.
           </article>
-          <div
+          <article
             className={
               visible[1]
                 ? 'information__sectionShown'
@@ -65,7 +65,7 @@ export const Information = () => {
             reiciendis repellendus veritatis ad, harum sint! Molestias cumque,
             sapiente odit, velit quam ut iste harum cupiditate eligendi vero a
             deleniti atque.
-          </div>
+          </article>
           <article
             className={
               visible[2]
