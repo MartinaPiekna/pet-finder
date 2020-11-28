@@ -7,7 +7,8 @@ import {
   Marker,
 } from 'react-google-maps';
 
-export const MapForm = withScriptjs(withGoogleMap(({ onChangePosition }) => {
+export const MapForm = withScriptjs(
+  withGoogleMap(({ onChangePosition }) => {
     const [marker, setMarker] = useState({
       lat: 50.0,
       lng: 14.5,

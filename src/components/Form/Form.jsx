@@ -218,7 +218,7 @@ export const Form = () => {
                   loadingElement={<div style={{ height: '100%' }} />}
                   containerElement={<div style={{ height: '100%' }} />}
                   mapElement={
-                    <div style={{ height: '100%', borderRadius: '5px' }} />
+                    <div style={{ height: '100%', borderRadius: '10px' }} />
                   }
                 />
               </div>
