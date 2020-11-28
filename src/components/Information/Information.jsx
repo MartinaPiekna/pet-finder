@@ -7,7 +7,7 @@ export const Information = () => {
 
   return (
     <>
-      <div className="information">
+      <section className="information">
         <h1 className="information__headline">Co ještě můžete udělat?</h1>
         <div className="information__tip">
           <div className="information__button">
@@ -31,20 +31,20 @@ export const Information = () => {
             </button>
           </div>
 
-          <div className={hidden ? 'information__sectionHidden' : 'information__sectionShown'}>
+          <article className={hidden ? 'information__sectionHidden' : 'information__sectionShown'}>
             PRVNI Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Omnis maxime pariatur ipsa error dicta nulla facilis enim eaque nam
             explicabo a mollitia ea velit accusantium, delectus aliquid hic
             inventore consequuntur.
-          </div>
-          <div className={hidden ? 'information__sectionShown' : 'information__sectionHidden'}>
+          </article>
+          <article className={hidden ? 'information__sectionShown' : 'information__sectionHidden'}>
             DRUHY Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
             reiciendis repellendus veritatis ad, harum sint! Molestias cumque,
             sapiente odit, velit quam ut iste harum cupiditate eligendi vero a
             deleniti atque.
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
     </>
   );
 };

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './footer.scss';
 
 export const Footer = () => {
-  return <footer className="footer">Footer text</footer>;
+  return <footer className="footer">2020 © Pet Finder</footer>;
 };

@@ -13,11 +13,13 @@ export const Navigation = () => {
       <nav className="navigation">
         <div className="navigation__logo">
           <img src={logo} alt="logo" />
+          <span>Pet Finder</span>
         </div>
         <div className="navigation__mobile-menu">
           <button
             onClick={(opened) => handleClick(opened)}
             className="navigation__hamburger"
+            tabIndex="-1"
           ></button>
         </div>
         <ul
@@ -32,6 +34,9 @@ export const Navigation = () => {
           </Link>
           <Link to="/new" className="navigation__link">
             <li className="navigation__item">Přidat</li>
+          </Link>
+          <Link to="/detail" className="navigation__link">
+            <li className="navigation__item">Detail</li>
           </Link>
           <Link to="/info" className="navigation__link">
             <li className="navigation__item">Rady a tipy</li>
