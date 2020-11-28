@@ -11,6 +11,7 @@ export const About = () => {
   const members = usInfo.map((member) => (
     
       <Us
+      key={member.name}
        about={member.about}
        profilePic={member.profilePic}
        name={member.name}
