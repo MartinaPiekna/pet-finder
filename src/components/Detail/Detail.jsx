@@ -15,7 +15,10 @@ export const Detail = () => {
       .get()
       .then(
         (document) => {
-          setRecord(document);
+          console.log(document);
+          const data = document.data();
+          console.log(data);
+          setRecord(data);
           setLoading('success');
         },
         (err) => {
@@ -37,9 +40,7 @@ export const Detail = () => {
             width="200"
             height="200"
             src={
-              record?.downloadURL === undefined
-                ? emptyImage
-                : record.downloadURL
+              record.downloadURL === undefined ? emptyImage : record.downloadURL
             }
             alt={`photo_${record.type}`}
           />

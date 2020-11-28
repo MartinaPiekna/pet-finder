@@ -46,7 +46,7 @@ export const Form = () => {
           .child(image.name)
           .getDownloadURL()
           .then((url) => {
-            setSaveRecord({ ...record, urlImage: url });
+            setSaveRecord((record) => ({ ...record, urlImage: url }));
           });
       },
     );
@@ -117,7 +117,10 @@ export const Form = () => {
                 value={record.type}
                 onChange={(e) => {
                   setChecked(!checked);
-                  setSaveRecord({ ...record, type: e.target.value });
+                  setSaveRecord((record) => ({
+                    ...record,
+                    type: e.target.value,
+                  }));
                 }}
                 required
               />
@@ -134,7 +137,7 @@ export const Form = () => {
               name="name"
               value={record.type}
               onChange={(e) =>
-                setSaveRecord({ ...record, type: e.target.value })
+                setSaveRecord((record) => ({ ...record, type: e.target.value }))
               }
               required={checked}
               placeholder="jiný druh"
@@ -154,7 +157,10 @@ export const Form = () => {
             id="description"
             name="description"
             onChange={(e) =>
-              setSaveRecord({ ...record, description: e.target.value })
+              setSaveRecord((record) => ({
+                ...record,
+                description: e.target.value,
+              }))
             }
             value={record.description}
             maxLength="300"
@@ -202,13 +208,13 @@ export const Form = () => {
               >
                 <MapForm
                   onChangePosition={(position) =>
-                    setSaveRecord({
+                    setSaveRecord((record) => ({
                       ...record,
                       location: {
                         latitude: position.lat,
                         longitude: position.lng,
                       },
-                    })
+                    }))
                   }
                   googleMapURL={
                     'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAJiOxHuDPq_5Z9NpUgwgWm5EQS14zbAe0'
@@ -233,7 +239,10 @@ export const Form = () => {
             type="tel"
             name="telefon"
             onChange={(e) =>
-              setSaveRecord({ ...record, phone: e.target.value })
+              setSaveRecord((record) => ({
+                ...record,
+                phone: e.target.value,
+              }))
             }
             value={record.phone}
             pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
@@ -249,7 +258,10 @@ export const Form = () => {
             name="email"
             id="email"
             onChange={(e) =>
-              setSaveRecord({ ...record, email: e.target.value })
+              setSaveRecord((record) => ({
+                ...record,
+                email: e.target.value,
+              }))
             }
             value={record.email}
             placeholder="novak@gmail.com"
@@ -264,7 +276,12 @@ export const Form = () => {
             type="date"
             name="date"
             id="date"
-            onChange={(e) => setSaveRecord({ ...record, date: e.target.value })}
+            onChange={(e) =>
+              setSaveRecord((record) => ({
+                ...record,
+                date: e.target.value,
+              }))
+            }
             value={record.date}
             required
           />
