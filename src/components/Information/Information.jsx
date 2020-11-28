@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './information.scss';
 
 export const Information = () => {
-  const [hidden, setHidden] = useState(false);
- 
+  const [visible, setVisible] = useState([true, false, false]);
 
   return (
     <>
@@ -12,33 +11,69 @@ export const Information = () => {
         <div className="information__tip">
           <div className="information__button">
             <button
-              className={hidden? "information__button--nonactive":"information__button--active"} 
+              className={
+                visible[0]
+                  ? 'information__button--active'
+                  : 'information__button--nonactive'
+              }
               onClick={() => {
-                setHidden(false);
-                
+                setVisible([true, false, false]);
               }}
             >
               Našlo se zvíře
             </button>
             <button
-              className={hidden? "information__button--active":"information__button--nonactive"}
+              className={
+                visible[1]
+                  ? 'information__button--active'
+                  : 'information__button--nonactive'
+              }
               onClick={() => {
-                setHidden(true);
-                
+                setVisible([false, true, false]);
               }}
             >
               Hledám zvíře
             </button>
+            <button
+              className={
+                visible[2]
+                  ? 'information__button--active'
+                  : 'information__button--nonactive'
+              }
+              onClick={() => {
+                setVisible([false, false, true]);
+              }}
+            >
+              Útulky v ČR
+            </button>
           </div>
 
-          <article className={hidden ? 'information__sectionHidden' : 'information__sectionShown'}>
+          <article className={visible[0] ? 'information__sectionHidden' : 'information__sectionShown'}>
             PRVNI Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Omnis maxime pariatur ipsa error dicta nulla facilis enim eaque nam
             explicabo a mollitia ea velit accusantium, delectus aliquid hic
             inventore consequuntur.
           </article>
-          <article className={hidden ? 'information__sectionShown' : 'information__sectionHidden'}>
+          <div
+            className={
+              visible[1]
+                ? 'information__sectionShown'
+                : 'information__sectionHidden'
+            }
+          >
             DRUHY Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+            reiciendis repellendus veritatis ad, harum sint! Molestias cumque,
+            sapiente odit, velit quam ut iste harum cupiditate eligendi vero a
+            deleniti atque.
+          </div>
+          <article
+            className={
+              visible[2]
+                ? 'information__sectionShown'
+                : 'information__sectionHidden'
+            }
+          >
+            TRETI Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
             reiciendis repellendus veritatis ad, harum sint! Molestias cumque,
             sapiente odit, velit quam ut iste harum cupiditate eligendi vero a
             deleniti atque.
