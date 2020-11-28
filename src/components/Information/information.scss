@@ -5,11 +5,31 @@
   display: flex;
   flex-direction: column;
   max-width: 80vw;
-  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  width: 80%;
+  max-width: 700px;
+  background-color: $color-white;
+  margin: 1rem 0 2rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
   &__headline {
-    text-align: center;
+    margin: 1rem;
+      @include font-size(22px);
+      text-align: center;
+      @include desktop {
+        @include font-size(28px);
+      }
+    }
+
+    &__button { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
 
   &__sectionShown {
     background-color: red;
@@ -18,10 +38,6 @@
   &__sectionHidden {
     display: none;
   }
-  &__button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 
     &--active {
      color: red;
@@ -30,4 +46,4 @@
       color: initial;
     }
   }
-}
+
