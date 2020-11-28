@@ -1,33 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './detail.scss';
 import { db } from '../../db.js';
 import emptyImage from '../../assets/img/empty_image.svg';
 
 export const Detail = () => {
-  const [records, setRecords] = useState([]);
+  const [record, setRecord] = useState([]);
   const [loading, setLoading] = useState('fail');
+  let { id } = useParams();
   useEffect(() => {
     setLoading('loading');
-    return db.collection('ztrata').onSnapshot(
-      (query) => {
-        setRecords(
-          query.docs.map((doc) => {
-            const data = doc.data();
-            data.id = doc.id;
-            return data;
-          }),
-        );
-        setLoading('success');
-      },
-      (err) => {
-        setLoading('fail');
-      },
-    );
+    db.collection('ztrata')
+      .doc(id)
+      .get()
+      .then(
+        (document) => {
+          console.log(document);
+          const data = document.data();
+          console.log(data);
+          setRecord(data);
+          setLoading('success');
+        },
+        (err) => {
+          setLoading('fail');
+        },
+      );
   }, []);
-
-  console.log(records);
-
-  const recordLost = records[1];
 
   let content = <h2 className="detail__loading">Nic tu není 😢</h2>;
 
@@ -42,11 +40,9 @@ export const Detail = () => {
             width="200"
             height="200"
             src={
-              recordLost.downloadURL === undefined
-                ? emptyImage
-                : recordLost.downloadURL
+              record.downloadURL === undefined ? emptyImage : record.downloadURL
             }
-            alt={`photo_${recordLost.type}`}
+            alt={`photo_${record.type}`}
           />
           <figcaption className="detail__figcaption">
             Fotografie ztraceného zvířete
@@ -56,32 +52,30 @@ export const Detail = () => {
           <span className="detail__name">Druh zvířete: </span>
           <span className="detail__type">
             {' '}
-            {recordLost.type === '' ? 'nevyplněno' : recordLost.type}
+            {record.type === '' ? 'nevyplněno' : record.type}
           </span>
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Popis zvířete: </span>
           <span className="detail__description">
             {' '}
-            {recordLost.description === ''
-              ? 'nevyplněno'
-              : recordLost.description}
+            {record.description === '' ? 'nevyplněno' : record.description}
           </span>
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Kontaktní e-mail: </span>
-          <a className="detail__email-link" href={`mailto:${recordLost.email}`}>
-            <span className="detail__email"> {recordLost.email}</span>
+          <a className="detail__email-link" href={`mailto:${record.email}`}>
+            <span className="detail__email"> {record.email}</span>
           </a>
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Telefonický kontakt: </span>
-          <span className="detail__phone"> {recordLost.phone}</span>
+          <span className="detail__phone"> {record.phone}</span>
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Datum ohlášení: </span>
-          <time className="detail__date" dateTime={recordLost.date}>
-            {recordLost.date}
+          <time className="detail__date" dateTime={record.date}>
+            {record.date}
           </time>
         </div>
       </div>
