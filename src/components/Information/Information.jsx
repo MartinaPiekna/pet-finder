@@ -7,14 +7,15 @@ export const Information = () => {
   return (
     <>
       <section className="information">
-        <h1 className="information__headline">Co ještě můžete udělat?</h1>
-        <div className="information__tip">
-          <div className="information__button">
+        <h1 className="information__title">Co ještě můžete udělat?</h1>
+        <hr className="information__divider" />
+        <div className="information__container">
+          <div className="information__buttons">
             <button
               className={
                 visible[0]
-                  ? 'information__button--active'
-                  : 'information__button--nonactive'
+                  ? 'information__button information__button--active'
+                  : 'information__button'
               }
               onClick={() => {
                 setVisible([true, false]);
@@ -25,8 +26,8 @@ export const Information = () => {
             <button
               className={
                 visible[1]
-                  ? 'information__button--active'
-                  : 'information__button--nonactive'
+                  ? 'information__button information__button--active'
+                  : 'information__button'
               }
               onClick={() => {
                 setVisible([false, true]);
@@ -39,8 +40,8 @@ export const Information = () => {
           <article
             className={
               visible[0]
-                ? 'information__sectionShown'
-                : 'information__sectionHidden'
+                ? 'information__section'
+                : 'information__section information__section--hidden'
             }
           >
             PRVNI Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -51,8 +52,8 @@ export const Information = () => {
           <article
             className={
               visible[1]
-                ? 'information__sectionShown'
-                : 'information__sectionHidden'
+                ? 'information__section'
+                : 'information__section information__section--hidden'
             }
           >
             DRUHY Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
