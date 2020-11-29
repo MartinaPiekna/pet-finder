@@ -7,21 +7,12 @@ import {
 } from 'react-google-maps';
 
 export const MapForm = withScriptjs(
-  withGoogleMap(({ onChangePosition }) => {
-    const [marker, setMarker] = useState({
-      lat: 50.0,
-      lng: 14.5,
-    });
-
-    useEffect(() => {
-      onChangePosition(marker);
-    }, [marker]);
-
+  withGoogleMap(({ onChangePosition, defaultPosition }) => {
     return (
       <>
         <GoogleMap
           onClick={(event) => {
-            setMarker({
+            onChangePosition({
               lat: event.latLng.lat(),
               lng: event.latLng.lng(),
             });
@@ -32,12 +23,12 @@ export const MapForm = withScriptjs(
           <Marker
             draggable
             onDragEnd={(event) => {
-              setMarker({
+              onChangePosition({
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng(),
               });
             }}
-            position={marker}
+            position={defaultPosition}
           />
         </GoogleMap>
       </>

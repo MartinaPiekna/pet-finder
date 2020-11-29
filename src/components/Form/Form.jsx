@@ -5,6 +5,7 @@ import './form.scss';
 import { db, storage } from '../../db.js';
 import emptyImage from '../../assets/img/empty_image.svg';
 import { MapForm } from '../MapForm.jsx/MapForm.jsx';
+import { Geolocation } from '../MapForm.jsx/Geolocation';
 
 export const Form = () => {
   const [progress, setProgress] = useState(0);
@@ -19,7 +20,10 @@ export const Form = () => {
     email: '',
     date: '',
     urlImage: '',
-    location: {},
+    location: {
+      latitude: 50.0,
+      longitude: 14.5,
+    },
   });
 
   console.log(record);
@@ -63,7 +67,7 @@ export const Form = () => {
       .then((document) => history.push(`/detail/${document.id}`));
     setDisabled(true);
   };
-
+  console.log('loc', record.location);
   return (
     <>
       <div className="form">
@@ -266,7 +270,19 @@ export const Form = () => {
                   height: '400px',
                 }}
               >
+                <Geolocation
+                  onPosition={(location) => {
+                    setSaveRecord((record) => ({
+                      ...record,
+                      location,
+                    }));
+                  }}
+                />
                 <MapForm
+                  defaultPosition={{
+                    lat: record.location.latitude,
+                    lng: record.location.longitude,
+                  }}
                   onChangePosition={(position) =>
                     setSaveRecord((record) => ({
                       ...record,
