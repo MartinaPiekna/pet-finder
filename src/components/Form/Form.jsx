@@ -11,6 +11,7 @@ export const Form = () => {
   const [checked, setChecked] = useState(false);
   const [selected, setSelected] = useState(false);
   const [disabled, setDisabled] = useState(false);
+  const [submit, setSubmit] = useState(false);
   const [record, setSaveRecord] = useState({
     typeOfRecord: '',
     description: '',
@@ -22,7 +23,7 @@ export const Form = () => {
     location: {},
   });
 
-  console.log(record);
+  // console.log(record);
 
   const types = ['pes', 'kočka', 'ptactvo'];
   const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.'-]+$/;
@@ -56,12 +57,16 @@ export const Form = () => {
     );
   };
 
-  const onSubmit = (e) => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
     db.collection('ztrata')
       .add(record)
       .then((document) => history.push(`/detail/${document.id}`));
     setDisabled(true);
+  };
+
+  const handleOnInvalid = () => {
+    setSubmit(true);
   };
 
   return (
@@ -72,7 +77,9 @@ export const Form = () => {
         <div className="form__switch-container">
           <div className="form__switches">
             <input
-              className="form__switch"
+              className={
+                submit ? 'form__switch form__input--invalid' : 'form__switch '
+              }
               type="radio"
               id="lost"
               name="typeOfRecord"
@@ -90,7 +97,9 @@ export const Form = () => {
           </div>
           <div className="form__switches">
             <input
-              className="form__switch"
+              className={
+                submit ? 'form__switch form__input--invalid' : 'form__switch '
+              }
               type="radio"
               id="found"
               name="typeOfRecord"
@@ -107,7 +116,11 @@ export const Form = () => {
             </label>
           </div>
         </div>
-        <form onSubmit={onSubmit} className="form__main">
+        <form
+          onSubmit={handleOnSubmit}
+          onInvalid={handleOnInvalid}
+          className="form__main"
+        >
           <label className="form__label-photo" htmlFor="image">
             Fotografie zvířete
           </label>
@@ -122,7 +135,11 @@ export const Form = () => {
             alt="photo"
           />
           <input
-            className="form__photo-input"
+            className={
+              submit
+                ? 'form__photo-input form__photo-input--invalid'
+                : 'form__photo-input'
+            }
             type="file"
             id="image"
             name="image"
@@ -139,7 +156,9 @@ export const Form = () => {
               return (
                 <div key={type} className="form__types">
                   <input
-                    className="form__type"
+                    className={
+                      submit ? 'form__type form__input--invalid' : 'form__type'
+                    }
                     type="radio"
                     id={type}
                     name="type"
@@ -152,7 +171,7 @@ export const Form = () => {
                     }}
                     required
                   />
-                  <label className="form__type-label" htmlFor="type">
+                  <label className="form__type-label" htmlFor={type}>
                     {type}
                   </label>
                 </div>
@@ -160,7 +179,9 @@ export const Form = () => {
             })}
             <div className="form__types">
               <input
-                className="form__type"
+                className={
+                  submit ? 'form__type form__input--invalid' : 'form__type'
+                }
                 type="radio"
                 id="name"
                 name="type"
@@ -177,7 +198,11 @@ export const Form = () => {
           </div>
           {checked ? (
             <input
-              className="form__type-input"
+              className={
+                submit
+                  ? 'form__type-input form__input--invalid'
+                  : 'form__type-input'
+              }
               type="text"
               id="name"
               name="type"
@@ -200,11 +225,16 @@ export const Form = () => {
             Popis zvířete:{' '}
           </label>
           <textarea
-            className="form__description"
+            className={
+              submit
+                ? 'form__description form__input--invalid'
+                : 'form__description '
+            }
             style={{ width: '50em', height: '200px' }}
             type="text"
             id="description"
             name="description"
+            onInvalid={handleOnInvalid}
             onChange={(e) => {
               const description = e.target.value;
               setSaveRecord((record) => ({
@@ -222,7 +252,11 @@ export const Form = () => {
                 Útulek:
               </label>
               <select
-                className="form__shelter-select"
+                className={
+                  submit
+                    ? 'form__shelter-select form__input--invalid'
+                    : 'form__shelter-select'
+                }
                 id="shelter"
                 name="shelter"
               >
@@ -313,7 +347,9 @@ export const Form = () => {
             E-mail:{' '}
           </label>
           <input
-            className="form__email"
+            className={
+              submit ? 'form__email form__input--invalid' : 'form__email'
+            }
             type="email"
             name="email"
             id="email"
@@ -332,7 +368,9 @@ export const Form = () => {
             Datum ztráty:{' '}
           </label>
           <input
-            className="form__date"
+            className={
+              submit ? 'form__date form__input--invalid' : 'form__date'
+            }
             type="datetime-local"
             name="date"
             id="date"

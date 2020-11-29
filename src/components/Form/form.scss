@@ -70,7 +70,7 @@
       border-radius: 25px;
       padding: 10px 20px;
       color: $color-black;
-      border: 1px solid $color-yellow;
+      border: 1.5px solid $color-yellow;
       outline: none;
       cursor: pointer;
       @include font-size(16px);
@@ -100,7 +100,7 @@
   &__date {
     padding: 10px 20px;
     border-radius: 25px;
-    border: 1px solid $color-yellow;
+    border: 1.5px solid $color-yellow;
   }
 
   &__types,
@@ -110,7 +110,7 @@
 
   &__description {
     border-radius: 10px;
-    border: 1px solid $color-yellow;
+    border: 1.5px solid $color-yellow;
     padding: 10px;
     max-width: 90%;
   }
@@ -126,7 +126,7 @@
   &__shelter-select {
     width: 90%;
     border-radius: 25px;
-    border: 1px solid $color-yellow;
+    border: 1.5px solid $color-yellow;
     padding: 10px 20px;
     @include desktop {
       width: 85%;
@@ -155,7 +155,6 @@
   &__button {
     border-radius: 25px;
     width: 150px;
-    border: none;
     margin-top: 25px;
     border: 2px solid $color-yellow;
     background-color: $color-yellow;
@@ -213,11 +212,6 @@
     border: 1.5px solid$color-yellow;
   }
 
-  progress::-webkit-progress-value {
-    background-color: $color-yellow !important;
-    color: $color-yellow !important;
-  }
-
   textarea {
     font-family: $comfortaa;
   }
@@ -231,11 +225,6 @@
     &:focus {
       outline: none !important;
       border-color: $color-yellow;
-      box-shadow: 0 0 10px $color-yellow;
-    }
-    &:invalid {
-      outline: none !important;
-      border-color: red;
     }
   }
 
@@ -268,4 +257,11 @@
     -ms-appearance: none;
     font-family: $comfortaa;
   }
+
+  // &__input {
+  //   &--invalid {
+  //     outline: none !important;
+  //     border-color: red;
+  //   }
+  // }
 }
