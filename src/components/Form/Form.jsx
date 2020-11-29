@@ -9,6 +9,7 @@ import { MapForm } from '../MapForm.jsx/MapForm.jsx';
 export const Form = () => {
   const [progress, setProgress] = useState(0);
   const [checked, setChecked] = useState(false);
+  const [selected, setSelected] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [record, setSaveRecord] = useState({
     typeOfRecord: '',
@@ -66,7 +67,7 @@ export const Form = () => {
   return (
     <>
       <div className="form">
-        <h1 className="form__headline">Vyplňte, prosím informace o ztrátě:</h1>
+        <h1 className="form__headline">Vyplňte, prosím formulář:</h1>
         <hr className="form__divider" />
         <div className="form__switch-container">
           <div className="form__switches">
@@ -107,7 +108,7 @@ export const Form = () => {
           </div>
         </div>
         <form onSubmit={onSubmit} className="form__main">
-          <label className="form__label" htmlFor="image">
+          <label className="form__label-photo" htmlFor="image">
             Fotografie zvířete
           </label>
           {progress === 0 || progress === 100 ? null : (
@@ -115,8 +116,8 @@ export const Form = () => {
           )}
           <img
             className="form__photo"
-            width="250"
-            height="200"
+            width="230"
+            height="180"
             src={progress === 100 ? record.urlImage : emptyImage}
             alt="photo"
           />
@@ -127,6 +128,7 @@ export const Form = () => {
             name="image"
             accept="image/png, image/jpeg"
             onChange={onFileChange}
+            required
           />
 
           <label className="form__label" htmlFor="type">
@@ -148,7 +150,6 @@ export const Form = () => {
                           type,
                         }));
                     }}
-                    value={type}
                     required
                   />
                   <label className="form__type-label" htmlFor="type">
@@ -226,9 +227,14 @@ export const Form = () => {
                 name="shelter"
               >
                 <option
-                  className="form__shelter-option"
-                  value="none"
-                  defaultValue
+                  className={
+                    selected
+                      ? 'form__shelter-option--disabled'
+                      : 'form__shelter-option'
+                  }
+                  value=""
+                  disabled
+                  selected
                 >
                   Vyberte útulek...
                 </option>
@@ -247,10 +253,11 @@ export const Form = () => {
                 mapě.
               </em>
             </div>
-          ) : (
-            <br />
-          )}
+          ) : null}
           <label className="form__label-map" htmlFor="map">
+            Vyberte místo na mapě:
+          </label>
+          <div className="form__map">
             <div className="form__map">
               {' '}
               <div
@@ -280,7 +287,7 @@ export const Form = () => {
                 />
               </div>
             </div>
-          </label>
+          </div>
 
           <label className="form__label" htmlFor="phone">
             Telefon:{' '}
@@ -290,7 +297,7 @@ export const Form = () => {
             id="phone"
             name="phone"
             type="tel"
-            name="telefon"
+            name="phone"
             onChange={(e) => {
               const phone = e.target.value;
               setSaveRecord((record) => ({
@@ -321,12 +328,12 @@ export const Form = () => {
             autoComplete="on"
             required
           />
-          <label className="form__label" htmlFor="date">
+          <label className="form__label" htmlFor="datetime-local">
             Datum ztráty:{' '}
           </label>
           <input
             className="form__date"
-            type="date"
+            type="datetime-local"
             name="date"
             id="date"
             onChange={(e) => {

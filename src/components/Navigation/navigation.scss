@@ -9,22 +9,28 @@
   align-items: center;
   background-color: transparent;
   font-family: $amatic;
-  color: $color-grayMid;
+  color: $color-white;
+
   &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    > span {
-      @include font-size(24px);
-      font-family: $comfortaa;
-    }
-    > img {
-      width: 40px;
-      height: auto;
-      margin: 0 0 0 1rem;
-      @include desktop {
-        margin: 0 0 0 2rem;
-      }
+    margin-left: 1rem;
+  }
+
+  &__name {
+    @include font-size(24px);
+    font-family: $comfortaa;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__image {
+    width: 40px;
+    height: auto;
+    margin: 0 0 0 1rem;
+    @include desktop {
+      margin: 0 0 0 2rem;
     }
   }
 
@@ -86,7 +92,7 @@
   }
 
   &__link {
-    color: $color-grayMid;
+    color: $color-white;
     text-decoration: none;
     font-weight: bold;
     position: relative;
@@ -100,7 +106,7 @@
           width: 25px;
           left: 40%;
           position: absolute;
-          border-top: 2px solid $color-grayMid;
+          border-top: 2px solid $color-white;
           padding-bottom: 10px;
         }
       }

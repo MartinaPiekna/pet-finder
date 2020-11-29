@@ -12,8 +12,16 @@ export const Navigation = () => {
     <>
       <nav className="navigation">
         <div className="navigation__logo">
-          <img src={logo} alt="logo" />
-          <span>Pet Finder</span>
+          <Link to="/" className="navigation__name">
+            <img
+              className="navigation__image"
+              src={logo}
+              alt="logo"
+              width="40px"
+              height="40px"
+            />
+            <span>Pet Finder</span>
+          </Link>
         </div>
         <div className="navigation__mobile-menu">
           <button
@@ -30,7 +38,7 @@ export const Navigation = () => {
           }
         >
           <Link to="/" className="navigation__link">
-            <li className="navigation__item">Home</li>
+            <li className="navigation__item">Mapa</li>
           </Link>
           <Link to="/new" className="navigation__link">
             <li className="navigation__item">Přidat</li>

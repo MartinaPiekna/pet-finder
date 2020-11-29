@@ -38,19 +38,24 @@
     align-items: center;
   }
 
-  &__label {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0 3px;
+  &__label-photo,
+  &__label,
+  &__label-map {
     @include font-size(16px);
     @include desktop {
       @include font-size(22px);
     }
   }
 
-  progress::-webkit-progress-value {
-    background-color: $color-yellow !important;
-    color: $color-yellow !important;
+  &__label,
+  &__label-map {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 10px;
+  }
+
+  &__label-photo {
+    margin-top: 20px;
   }
 
   &__photo-input {
@@ -85,40 +90,6 @@
     position: relative;
   }
 
-  input[type='radio'] {
-    margin-right: 10px;
-  }
-
-  input[type='radio']:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -5px;
-    margin-right: 5px;
-    position: relative;
-    background-color: $color-white;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 1.5px solid$color-yellow;
-    cursor: pointer;
-  }
-
-  input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -5px;
-    position: relative;
-    background-color: $color-yellow;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 1.5px solid$color-yellow;
-  }
-
   &__photo {
     margin: 3px 0 3px 0;
   }
@@ -129,7 +100,6 @@
   &__date {
     padding: 10px 20px;
     border-radius: 25px;
-    margin-top: 5px;
     border: 1px solid $color-yellow;
   }
 
@@ -143,9 +113,6 @@
     border: 1px solid $color-yellow;
     padding: 10px;
     max-width: 90%;
-  }
-  textarea {
-    font-family: $comfortaa;
   }
 
   &__shelters {
@@ -166,18 +133,8 @@
     }
   }
 
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
+  &__shelter-option--disabled {
     color: $color-gray;
-    font-family: $comfortaa;
-  }
-
-  ::placeholder {
-    color: $color-gray;
-    font-family: $comfortaa;
   }
 
   &__shelter--emphisize {
@@ -192,28 +149,7 @@
     justify-content: center;
     align-items: center;
     height: 400px;
-    background-color: $color-yellow;
-  }
-
-  &__label-map {
-    width: 93%;
-  }
-
-  [type='date'] {
-    background: #fff url('../../assets//img/calendar.svg') 90% 50% no-repeat;
-  }
-
-  [type='date']::-webkit-inner-spin-button {
-    display: none;
-  }
-
-  [type='date']::-webkit-calendar-picker-indicator {
-    opacity: 0;
-  }
-
-  input[type='date'] {
-    font-family: $comfortaa;
-    color: $color-gray;
+    width: 97%;
   }
 
   &__button {
@@ -241,5 +177,95 @@
         background-color: $color-white;
       }
     }
+  }
+
+  input[type='radio'] {
+    margin-right: 10px;
+  }
+
+  input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -4px;
+    margin-right: 5px;
+    position: relative;
+    background-color: $color-white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1.5px solid$color-yellow;
+    cursor: pointer;
+  }
+
+  input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -4px;
+    position: relative;
+    background-color: $color-yellow;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1.5px solid$color-yellow;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: $color-yellow !important;
+    color: $color-yellow !important;
+  }
+
+  textarea {
+    font-family: $comfortaa;
+  }
+
+  select,
+  textarea,
+  input[type='datetime-local'],
+  input[type='tel'],
+  input[type='email'],
+  input[type='file'] {
+    &:focus {
+      outline: none !important;
+      border-color: $color-yellow;
+      box-shadow: 0 0 10px $color-yellow;
+    }
+    &:invalid {
+      outline: none !important;
+      border-color: red;
+    }
+  }
+
+  input[type='datetime-local']::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  input[type='datetime-local']::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+    margin-left: -25px;
+  }
+
+  input[type='datetime-local'] {
+    font-family: $comfortaa;
+    color: $color-gray;
+    height: 15px;
+    background: #fff url('../../assets//img/calendar.svg') 90% 50% no-repeat;
+  }
+
+  ::placeholder {
+    color: $color-gray;
+    font-family: $comfortaa;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    font-family: $comfortaa;
   }
 }
