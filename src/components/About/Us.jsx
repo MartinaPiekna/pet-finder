@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-=======
 import React from 'react';
->>>>>>> 607096a5a977ff9c86ed6013856758328d7f5352
 import './about.scss';
 
 export const Us = (props) => {
