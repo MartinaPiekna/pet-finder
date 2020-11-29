@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './information.scss';
 
 export const Information = () => {
-  const [visible, setVisible] = useState([true, false, false]);
+  const [visible, setVisible] = useState([true, false]);
 
   return (
     <>
@@ -17,10 +17,10 @@ export const Information = () => {
                   : 'information__button--nonactive'
               }
               onClick={() => {
-                setVisible([true, false, false]);
+                setVisible([true, false]);
               }}
             >
-              Útulky v ČR
+              Hledá se zvíře
             </button>
             <button
               className={
@@ -29,26 +29,20 @@ export const Information = () => {
                   : 'information__button--nonactive'
               }
               onClick={() => {
-                setVisible([false, true, false]);
-              }}
-            >
-              Hledá se zvíře
-            </button>
-            <button
-              className={
-                visible[2]
-                  ? 'information__button--active'
-                  : 'information__button--nonactive'
-              }
-              onClick={() => {
-                setVisible([false, false, true]);
+                setVisible([false, true]);
               }}
             >
               Nalezlo se zvíře
             </button>
           </div>
 
-          <article className={visible[0] ? 'information__sectionShown' : 'information__sectionHidden'}>
+          <article
+            className={
+              visible[0]
+                ? 'information__sectionShown'
+                : 'information__sectionHidden'
+            }
+          >
             PRVNI Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Omnis maxime pariatur ipsa error dicta nulla facilis enim eaque nam
             explicabo a mollitia ea velit accusantium, delectus aliquid hic
@@ -62,18 +56,6 @@ export const Information = () => {
             }
           >
             DRUHY Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-            reiciendis repellendus veritatis ad, harum sint! Molestias cumque,
-            sapiente odit, velit quam ut iste harum cupiditate eligendi vero a
-            deleniti atque.
-          </article>
-          <article
-            className={
-              visible[2]
-                ? 'information__sectionShown'
-                : 'information__sectionHidden'
-            }
-          >
-            TRETI Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
             reiciendis repellendus veritatis ad, harum sint! Molestias cumque,
             sapiente odit, velit quam ut iste harum cupiditate eligendi vero a
             deleniti atque.

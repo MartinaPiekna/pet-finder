@@ -43,8 +43,8 @@ export const Navigation = () => {
           <Link to="/new" className="navigation__link">
             <li className="navigation__item">Přidat</li>
           </Link>
-          <Link to="/detail" className="navigation__link">
-            <li className="navigation__item">Detail</li>
+          <Link to="/shelters" className="navigation__link">
+            <li className="navigation__item">Útulky</li>
           </Link>
           <Link to="/info" className="navigation__link">
             <li className="navigation__item">Rady a tipy</li>
