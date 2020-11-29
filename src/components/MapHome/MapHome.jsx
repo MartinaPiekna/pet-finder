@@ -46,6 +46,7 @@ export const MapHome = withScriptjs(
                 }}
                 onClick={() => {
                   setSelectedShelter(shelter);
+                  setSelectedRecord(null);
                 }}
                 icon={{
                   url: logo,
@@ -68,6 +69,7 @@ export const MapHome = withScriptjs(
                   }}
                   onClick={() => {
                     setSelectedRecord(record);
+                    setSelectedShelter(null);
                   }}
                 />
               ))}
@@ -85,6 +87,7 @@ export const MapHome = withScriptjs(
                   }}
                   onClick={() => {
                     setSelectedRecord(record);
+                    setSelectedShelter(null);
                   }}
                 />
               ))}
