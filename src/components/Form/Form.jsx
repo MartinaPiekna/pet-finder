@@ -151,7 +151,7 @@ export const Form = () => {
                     value={type}
                     required
                   />
-                  <label className="form__type-label" htmlFor="name">
+                  <label className="form__type-label" htmlFor="type">
                     {type}
                   </label>
                 </div>
@@ -162,14 +162,14 @@ export const Form = () => {
                 className="form__type"
                 type="radio"
                 id="name"
-                name="name"
+                name="type"
                 value=""
                 onChange={() => {
-                  setChecked(!checked);
+                  setChecked((checked) => !checked);
                 }}
                 required
               />
-              <label className="form__type-label" htmlFor="name">
+              <label className="form__type-label" htmlFor="type">
                 jiné
               </label>
             </div>
@@ -179,7 +179,7 @@ export const Form = () => {
               className="form__type-input"
               type="text"
               id="name"
-              name="name"
+              name="type"
               onChange={(e) => {
                 const type = e.target.value;
                 setSaveRecord((record) => ({
@@ -204,18 +204,18 @@ export const Form = () => {
             type="text"
             id="description"
             name="description"
-            onChange={(e) =>
+            onChange={(e) => {
+              const description = e.target.value;
               setSaveRecord((record) => ({
                 ...record,
-                description: e.target.value,
-              }))
-            }
-            value={record.description}
+                description,
+              }));
+            }}
             maxLength="300"
             placeholder="Zde popište vaše ztracené zvíře..."
             required
           />
-          {record.typeOfRecord === 'found' ? (
+          {record.typeOfRecord === 'lost' ? (
             <div className="form__shelters">
               <label className="form__label" htmlFor="shelter">
                 Útulek:
@@ -291,13 +291,13 @@ export const Form = () => {
             name="phone"
             type="tel"
             name="telefon"
-            onChange={(e) =>
+            onChange={(e) => {
+              const phone = e.target.value;
               setSaveRecord((record) => ({
                 ...record,
-                phone: e.target.value,
-              }))
-            }
-            value={record.phone}
+                phone,
+              }));
+            }}
             pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
             placeholder="123 456 789"
             autoComplete="on"
@@ -310,13 +310,13 @@ export const Form = () => {
             type="email"
             name="email"
             id="email"
-            onChange={(e) =>
+            onChange={(e) => {
+              const email = e.target.value;
               setSaveRecord((record) => ({
                 ...record,
-                email: e.target.value,
-              }))
-            }
-            value={record.email}
+                email,
+              }));
+            }}
             placeholder="novak@gmail.com"
             autoComplete="on"
             required
@@ -329,13 +329,13 @@ export const Form = () => {
             type="date"
             name="date"
             id="date"
-            onChange={(e) =>
+            onChange={(e) => {
+              const date = e.target.value;
               setSaveRecord((record) => ({
                 ...record,
-                date: e.target.value,
-              }))
-            }
-            value={record.date}
+                date,
+              }));
+            }}
             required
           />
           <button className="form__button" type="submit" disabled={disabled}>
