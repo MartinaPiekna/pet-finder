@@ -258,10 +258,10 @@
     font-family: $comfortaa;
   }
 
-  // &__input {
-  //   &--invalid {
-  //     outline: none !important;
-  //     border-color: red;
-  //   }
-  // }
+  &__input {
+    &--invalid:invalid {
+      outline: none !important;
+      border-color: red;
+    }
+  }
 }

@@ -1,2 +1,14 @@
 @import '../../assets/variables.scss';
 @import '../../assets/mixins.scss';
+
+.shelters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    margin: 20px 0;
+    width: 300px;
+  }
+}
