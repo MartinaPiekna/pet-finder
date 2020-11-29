@@ -19,16 +19,6 @@ export const MapContainer = () => {
     <>
       <div className="home__button">
         <button
-          className="home__button--fourth"
-          onClick={() => {
-            setEnabledShelters(true);
-            setEnabledFound(true);
-            setEnabledLost(true);
-          }}
-        >
-          Zobrazit vše
-        </button>
-        <button
           className="home__button--first"
           onClick={() => {
             setEnabledShelters(true);
@@ -57,6 +47,16 @@ export const MapContainer = () => {
           }}
         >
           Mapa nalezených zvířat
+        </button>
+        <button
+          className="home__button--fourth"
+          onClick={() => {
+            setEnabledShelters(true);
+            setEnabledFound(true);
+            setEnabledLost(true);
+          }}
+        >
+          Zobrazit vše
         </button>
       </div>
 
@@ -125,27 +125,6 @@ export const MapHome = withScriptjs(
                 }}
               />
             ))}
-            {selectedShelter && (
-              <InfoWindow
-                position={{
-                  lat: selectedShelter.souradnice[0],
-                  lng: selectedShelter.souradnice[1],
-                }}
-                onCloseClick={() => {
-                  setSelectedShelter(null);
-                }}
-              >
-                <div>
-                  <img
-                    src={shelter}
-                    alt="logo"
-                    style={{ margin: '0 auto', display: 'block' }}
-                  />
-                  <h2>{selectedShelter.nazev}</h2>
-                  <p>{selectedShelter.adresa}</p>
-                </div>
-              </InfoWindow>
-            )}
 
             {records
               .filter((record) => {
@@ -181,6 +160,27 @@ export const MapHome = withScriptjs(
                   }}
                 />
               ))}
+              {selectedShelter && (
+              <InfoWindow
+                position={{
+                  lat: selectedShelter.souradnice[0],
+                  lng: selectedShelter.souradnice[1],
+                }}
+                onCloseClick={() => {
+                  setSelectedShelter(null);
+                }}
+              >
+                <div>
+                  <img
+                    src={shelter}
+                    alt="logo"
+                    style={{ margin: '0 auto', display: 'block' }}
+                  />
+                  <h2>{selectedShelter.nazev}</h2>
+                  <p>{selectedShelter.adresa}</p>
+                </div>
+              </InfoWindow>
+            )}
           </GoogleMap>
         </div>
       </>

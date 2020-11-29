@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MapContainer } from '../MapHome/MapHome.jsx';
 import { Link } from 'react-router-dom';
 import './home.scss';
