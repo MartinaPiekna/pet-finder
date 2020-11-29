@@ -14,7 +14,9 @@ export const Shelters = () => {
             <h3 className="shelters__location">📍 {shelter.okres}</h3>
             <p className="shelters__address">🏡 {shelter.adresa}</p>
             <p className="shelters__phone">📞 {shelter.telefon}</p>
-            <p className="shelters__email">📬 {shelter.email}</p>
+            <a className="shelters__link" href={`mailto:${shelter.email}`}>
+              <span className="shelters__email">📬 {shelter.email}</span>
+            </a>
             <p className="shelters__open-hours">🕘 {shelter.provozni_doba}</p>
           </div>
           <hr className="shelters__divider--small" />

@@ -69,4 +69,14 @@
       @include font-size(24px);
     }
   }
+
+  &__link,
+  &__email {
+    text-decoration: none;
+    color: black;
+    &:hover,
+    &:focus {
+      color: $color-yellow;
+    }
+  }
 }
