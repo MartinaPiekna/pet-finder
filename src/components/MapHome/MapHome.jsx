@@ -4,105 +4,33 @@ import {
   withGoogleMap,
   withScriptjs,
   Marker,
-  InfoWindow,
 } from 'react-google-maps';
+import './mapHome.scss';
 import shelters from '../../data/utulky.json';
 import logo from '../../assets/img/location.svg';
 import shelter from '../../assets/img/pet-house.svg';
 import { db } from '../../db.js';
-
-export const MapContainer = () => {
-  const [enabledShelters, setEnabledShelters] = useState(true);
-  const [enabledLost, setEnabledLost] = useState(true);
-  const [enabledFound, setEnabledFound] = useState(true);
-  return (
-    <>
-      <div className="home__button">
-        <button
-          className="home__button--first"
-          onClick={() => {
-            setEnabledShelters(true);
-            setEnabledFound(false);
-            setEnabledLost(false);
-          }}
-        >
-          Mapa s útulky
-        </button>
-        <button
-          className="home__button--second"
-          onClick={() => {
-            setEnabledLost(true);
-            setEnabledShelters(false);
-            setEnabledFound(false);
-          }}
-        >
-          Mapa ztracených zvířat
-        </button>
-        <button
-          className="home__button--third"
-          onClick={() => {
-            setEnabledFound(true);
-            setEnabledLost(false);
-            setEnabledShelters(false);
-          }}
-        >
-          Mapa nalezených zvířat
-        </button>
-        <button
-          className="home__button--fourth"
-          onClick={() => {
-            setEnabledShelters(true);
-            setEnabledFound(true);
-            setEnabledLost(true);
-          }}
-        >
-          Zobrazit vše
-        </button>
-      </div>
-
-      <div className="home__map" style={{ width: '80vw', height: '400px' }}>
-        <MapHome
-          googleMapURL={
-            'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAJiOxHuDPq_5Z9NpUgwgWm5EQS14zbAe0'
-          }
-          loadingElement={<div style={{ height: '100%' }} />}
-          containerElement={<div style={{ height: '100%' }} />}
-          mapElement={<div style={{ height: '100%', borderRadius: '5px' }} />}
-          enabledShelters={enabledShelters}
-          enabledLost={enabledLost}
-          enabledFound={enabledFound}
-        />
-      </div>
-    </>
-  );
-};
+import { Link } from 'react-router-dom';
+import { InfoPopup } from '../InfoPopup/InfoPopup';
 
 export const MapHome = withScriptjs(
   withGoogleMap((props) => {
     const [selectedShelter, setSelectedShelter] = useState(null);
+    const [selectedRecord, setSelectedRecord] = useState(null);
     const [records, setRecords] = useState([]);
-    const [loading, setLoading] = useState('fail');
 
     useEffect(() => {
       console.log();
-      setLoading('loading');
-      return db.collection('ztrata').onSnapshot(
-        (query) => {
-          setRecords(
-            query.docs.map((doc) => {
-              const data = doc.data();
-              data.id = doc.id;
-              return data;
-            }),
-          );
-          setLoading('success');
-        },
-        (err) => {
-          setLoading('fail');
-        },
-      );
+      return db.collection('ztrata').onSnapshot((query) => {
+        setRecords(
+          query.docs.map((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            return data;
+          }),
+        );
+      });
     }, []);
-    console.log(records);
 
     return (
       <>
@@ -118,6 +46,7 @@ export const MapHome = withScriptjs(
                 }}
                 onClick={() => {
                   setSelectedShelter(shelter);
+                  setSelectedRecord(null);
                 }}
                 icon={{
                   url: logo,
@@ -139,7 +68,8 @@ export const MapHome = withScriptjs(
                     lng: record.location.longitude,
                   }}
                   onClick={() => {
-                    setRecords(record);
+                    setSelectedRecord(record);
+                    setSelectedShelter(null);
                   }}
                 />
               ))}
@@ -156,30 +86,37 @@ export const MapHome = withScriptjs(
                     lng: record.location.longitude,
                   }}
                   onClick={() => {
-                    setRecords(record);
+                    setSelectedRecord(record);
+                    setSelectedShelter(null);
                   }}
                 />
               ))}
-              {selectedShelter && (
-              <InfoWindow
-                position={{
-                  lat: selectedShelter.souradnice[0],
-                  lng: selectedShelter.souradnice[1],
+            {selectedShelter && (
+              <InfoPopup
+                location={{
+                  latitude: selectedShelter.souradnice[0],
+                  longitude: selectedShelter.souradnice[1],
                 }}
-                onCloseClick={() => {
+                onClose={() => {
                   setSelectedShelter(null);
                 }}
+                imageSource={shelter}
+                title={selectedShelter.nazev}
+                description={selectedShelter.adresa}
+              ></InfoPopup>
+            )}
+            {selectedRecord && (
+              <InfoPopup
+                location={selectedRecord.location}
+                onClose={() => {
+                  setSelectedRecord(null);
+                }}
+                imageSource={selectedRecord.urlImage}
+                title={selectedRecord.type}
+                description={selectedRecord.description}
               >
-                <div>
-                  <img
-                    src={shelter}
-                    alt="logo"
-                    style={{ margin: '0 auto', display: 'block' }}
-                  />
-                  <h2>{selectedShelter.nazev}</h2>
-                  <p>{selectedShelter.adresa}</p>
-                </div>
-              </InfoWindow>
+                <Link to={`/detail/${selectedRecord.id}`}>Podrobnosti</Link>
+              </InfoPopup>
             )}
           </GoogleMap>
         </div>

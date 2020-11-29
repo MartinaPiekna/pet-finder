@@ -83,7 +83,7 @@ export const Detail = () => {
 
   return (
     <section className="detail">
-      <h1 className="detail__headline">Detail ztráty</h1>
+      <h1 className="detail__headline">Detail záznamu</h1>
       <hr className="detail__divider" />
       {content}
     </section>
