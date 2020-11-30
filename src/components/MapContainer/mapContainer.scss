@@ -4,12 +4,17 @@
 .mapContainer {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   padding: 30px 50px 10px;
+  @include tablet {
+    flex-wrap: nowrap;
+  }
 
   &__button {
     padding: 10px 20px;
+    margin: 0 0 10px 0;
     width: 100px;
     background-color: $color-white;
     border: 1px solid $color-yellow;
@@ -23,6 +28,9 @@
     &:hover,
     &:focus {
       background-color: $color-yellow;
+    }
+    @include tablet {
+      margin: 0;
     }
   }
 }
