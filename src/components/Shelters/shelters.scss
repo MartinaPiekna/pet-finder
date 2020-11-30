@@ -6,14 +6,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
   border-radius: 15px;
   padding: 20px;
+  min-height: 1070px;
   width: 75%;
   max-width: 700px;
   font-family: $comfortaa;
   background-color: $color-white;
   margin: 1rem 0 2rem;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
   &__title {
     margin: 10px 0;

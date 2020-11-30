@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   GoogleMap,
   withGoogleMap,
   withScriptjs,
   Marker,
 } from 'react-google-maps';
+import lost from '../../assets/img/location_lost.svg';
 
 export const MapForm = withScriptjs(
   withGoogleMap(({ onChangePosition, defaultPosition }) => {
@@ -27,6 +28,10 @@ export const MapForm = withScriptjs(
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng(),
               });
+            }}
+            icon={{
+              url: lost,
+              scaledSize: new window.google.maps.Size(40, 40),
             }}
             position={defaultPosition}
           />

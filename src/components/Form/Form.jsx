@@ -4,8 +4,8 @@ import shelters from '../../data/utulky.json';
 import './form.scss';
 import { db, storage } from '../../db.js';
 import emptyImage from '../../assets/img/empty_image.svg';
-import { MapForm } from '../MapForm.jsx/MapForm.jsx';
-import { Geolocation } from '../MapForm.jsx/Geolocation';
+import { MapForm } from '../MapForm/MapForm.jsx';
+import { Geolocation } from '../Geolocation/Geolocation.jsx';
 
 export const Form = () => {
   const [progress, setProgress] = useState(0);

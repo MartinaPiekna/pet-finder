@@ -98,6 +98,11 @@
     font-weight: bold;
     position: relative;
     margin: 0 2rem;
+    &:hover,
+    &:focus {
+      color: $color-greenDark;
+      background-color: $color-yellow;
+    }
     @include desktop {
       &:hover,
       &:focus {
