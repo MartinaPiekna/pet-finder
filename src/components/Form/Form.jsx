@@ -27,8 +27,6 @@ export const Form = () => {
     },
   });
 
-  // console.log(record);
-
   const types = ['pes', 'kočka', 'ptactvo'];
   const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.'-]+$/;
 

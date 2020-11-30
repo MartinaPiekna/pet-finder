@@ -1,0 +1,28 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.mapContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 50px 10px;
+
+  &__button {
+    padding: 10px 20px;
+    width: 100px;
+    background-color: $color-white;
+    border: 1px solid $color-yellow;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: $comfortaa;
+    cursor: pointer;
+    &--active {
+      background-color: $color-yellow;
+    }
+    &:hover,
+    &:focus {
+      background-color: $color-yellow;
+    }
+  }
+}

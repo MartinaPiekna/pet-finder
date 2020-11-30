@@ -5,20 +5,19 @@ import './home.scss';
 
 export const Home = () => {
   return (
-    <>
-      <h1 className="home__headline">nadpis</h1>
+    <div className="home">
+      <h1 className="home__title">Najděte svého ztraceného mazlíčka</h1>
+      <hr className="home__divider" />
       <section className="home__description">
-        <h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero ullam
-          veritatis sequi voluptas molestias esse expedita maxime, corrupti
-          voluptate vitae eligendi, adipisci nihil neque, ipsa nam! Similique
-          porro totam at?
+        <h2 className="home__text">
+          Díky přehledné mapě najdete nejbližší útulky či nalezené a ztracené
+          mazlíčky. Jednoduchým filtrováním zobrazíte požadovaný druh záznamů.
         </h2>
       </section>
       <MapContainer />
-      <Link to="/new" className="home__button--add">
+      <Link to="/new" className="home__button">
         Přidat záznam
       </Link>
-    </>
+    </div>
   );
 };

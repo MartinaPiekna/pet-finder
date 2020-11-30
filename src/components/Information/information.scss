@@ -51,7 +51,7 @@
   &__button {
     margin: 10px 15px 20px;
     font-family: $comfortaa;
-
+    cursor: pointer;
     font-weight: bold;
     width: 180px;
     border-radius: 10px;
@@ -67,6 +67,10 @@
     }
     &--active {
       background-color: $color-yellow;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid $color-yellow;
     }
   }
 
