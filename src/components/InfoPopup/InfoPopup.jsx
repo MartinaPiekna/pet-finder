@@ -24,12 +24,18 @@ export const InfoPopup = ({
         <img
           src={imageSource ? imageSource : empty}
           alt="logo"
-          width="35px"
-          height="35px"
+          width="50px"
+          height="50px"
           style={{ margin: '0 auto', display: 'block' }}
         />
-        <h2 style={{ margin: '10px 0' }}>{title}</h2>
-        <p style={{ margin: '0 0 10px' }}>{description}</p>
+        <h2 style={{ margin: '10px 0', textAlign: 'center', fontSize: '18px' }}>
+          {title}
+        </h2>
+        <p
+          style={{ margin: '0 0 10px', textAlign: 'center', fontSize: '16px' }}
+        >
+          {description}
+        </p>
         {children}
       </div>
     </InfoWindow>

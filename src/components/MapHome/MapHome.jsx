@@ -7,8 +7,9 @@ import {
 } from 'react-google-maps';
 import './mapHome.scss';
 import shelters from '../../data/utulky.json';
-import logo from '../../assets/img/location.svg';
-import shelter from '../../assets/img/pet-house.svg';
+import lost from '../../assets/img/location_lost.svg';
+import found from '../../assets/img/location_found.svg';
+import shelterIcon from '../../assets/img/pet-house_color.svg';
 import { db } from '../../db.js';
 import { Link } from 'react-router-dom';
 import { InfoPopup } from '../InfoPopup/InfoPopup';
@@ -20,7 +21,6 @@ export const MapHome = withScriptjs(
     const [records, setRecords] = useState([]);
 
     useEffect(() => {
-      console.log();
       return db.collection('ztrata').onSnapshot((query) => {
         setRecords(
           query.docs.map((doc) => {
@@ -49,7 +49,7 @@ export const MapHome = withScriptjs(
                   setSelectedRecord(null);
                 }}
                 icon={{
-                  url: logo,
+                  url: shelterIcon,
                   scaledSize: new window.google.maps.Size(40, 40),
                 }}
               />
@@ -66,6 +66,10 @@ export const MapHome = withScriptjs(
                   position={{
                     lat: record.location.latitude,
                     lng: record.location.longitude,
+                  }}
+                  icon={{
+                    url: lost,
+                    scaledSize: new window.google.maps.Size(40, 40),
                   }}
                   onClick={() => {
                     setSelectedRecord(record);
@@ -85,6 +89,10 @@ export const MapHome = withScriptjs(
                     lat: record.location.latitude,
                     lng: record.location.longitude,
                   }}
+                  icon={{
+                    url: found,
+                    scaledSize: new window.google.maps.Size(40, 40),
+                  }}
                   onClick={() => {
                     setSelectedRecord(record);
                     setSelectedShelter(null);
@@ -100,7 +108,7 @@ export const MapHome = withScriptjs(
                 onClose={() => {
                   setSelectedShelter(null);
                 }}
-                imageSource={shelter}
+                imageSource={shelterIcon}
                 title={selectedShelter.nazev}
                 description={selectedShelter.adresa}
               ></InfoPopup>
@@ -115,7 +123,19 @@ export const MapHome = withScriptjs(
                 title={selectedRecord.type}
                 description={selectedRecord.description}
               >
-                <Link to={`/detail/${selectedRecord.id}`}>Podrobnosti</Link>
+                <Link
+                  to={`/detail/${selectedRecord.id}`}
+                  style={{
+                    textAlign: 'center',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    textDecoration: 'none',
+                    color: '#b46617',
+                    display: 'block',
+                  }}
+                >
+                  Podrobnosti
+                </Link>
               </InfoPopup>
             )}
           </GoogleMap>

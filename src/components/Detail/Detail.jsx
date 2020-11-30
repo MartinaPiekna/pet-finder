@@ -16,7 +16,6 @@ export const Detail = () => {
       .then(
         (document) => {
           const data = document.data();
-          console.log(data);
           setRecord(data);
           setLoading('success');
         },
