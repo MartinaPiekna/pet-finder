@@ -28,7 +28,8 @@ export const Form = () => {
   });
 
   const types = ['pes', 'kočka', 'ptactvo'];
-  const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.'-]+$/;
+  const regexp = /[a-zA-Z]/gi;
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
 
   let history = useHistory();
 
@@ -217,7 +218,6 @@ export const Form = () => {
               }}
               required={checked}
               placeholder="jiný druh"
-              pattern={regexp}
               autoFocus
               list="names"
             />
@@ -270,7 +270,6 @@ export const Form = () => {
                   }
                   value=""
                   disabled
-                  selected
                 >
                   Vyberte útulek...
                 </option>
@@ -367,6 +366,7 @@ export const Form = () => {
             type="email"
             name="email"
             id="email"
+            pattern={emailRegex}
             onChange={(e) => {
               const email = e.target.value;
               setSaveRecord((record) => ({

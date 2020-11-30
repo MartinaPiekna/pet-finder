@@ -38,9 +38,7 @@ export const Detail = () => {
             className="detail__image"
             width="200"
             height="200"
-            src={
-              record.downloadURL === undefined ? emptyImage : record.downloadURL
-            }
+            src={record.urlImage ? record.urlImage : emptyImage}
             alt={`photo_${record.type}`}
           />
           <figcaption className="detail__figcaption">
@@ -69,7 +67,10 @@ export const Detail = () => {
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Telefonický kontakt: </span>
-          <span className="detail__phone"> {record.phone}</span>
+          <span className="detail__phone">
+            {' '}
+            {record.phone ? record.phone : 'nevyplněno'}
+          </span>
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Datum ohlášení: </span>
