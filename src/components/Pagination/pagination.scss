@@ -1,0 +1,43 @@
+@import '../../assets/variables.scss';
+@import '../../assets/mixins.scss';
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    @include desktop {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin: 5px 10px;
+  }
+
+  &__button {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-white;
+    border: 1px solid $color-yellow;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: $comfortaa;
+    &:hover,
+    &:focus {
+      color: $color-black;
+      background-color: $color-yellow;
+    }
+  }
+}

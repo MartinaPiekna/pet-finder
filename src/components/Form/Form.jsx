@@ -4,8 +4,8 @@ import shelters from '../../data/utulky.json';
 import './form.scss';
 import { db, storage } from '../../db.js';
 import emptyImage from '../../assets/img/empty_image.svg';
-import { MapForm } from '../MapForm.jsx/MapForm.jsx';
-import { Geolocation } from '../MapForm.jsx/Geolocation';
+import { MapForm } from '../MapForm/MapForm.jsx';
+import { Geolocation } from '../Geolocation/Geolocation.jsx';
 
 export const Form = () => {
   const [progress, setProgress] = useState(0);
@@ -27,10 +27,9 @@ export const Form = () => {
     },
   });
 
-  // console.log(record);
-
   const types = ['pes', 'kočka', 'ptactvo'];
-  const regexp = /^[a-zA-ZáčďéěíňóřšťůúýžÁČĎÉĚÍŇÓŘŠŤŮÚÝŽ \.'-]+$/;
+  const regexp = /[a-zA-Z]/gi;
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
 
   let history = useHistory();
 
@@ -219,7 +218,6 @@ export const Form = () => {
               }}
               required={checked}
               placeholder="jiný druh"
-              pattern={regexp}
               autoFocus
               list="names"
             />
@@ -272,7 +270,6 @@ export const Form = () => {
                   }
                   value=""
                   disabled
-                  selected
                 >
                   Vyberte útulek...
                 </option>
@@ -369,6 +366,7 @@ export const Form = () => {
             type="email"
             name="email"
             id="email"
+            pattern={emailRegex}
             onChange={(e) => {
               const email = e.target.value;
               setSaveRecord((record) => ({

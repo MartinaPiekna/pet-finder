@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import {
-  GoogleMap,
-  withScriptjs,
-  withGoogleMap,
-  Marker,
-} from 'react-google-maps';
+import React from 'react';
+import { withScriptjs, withGoogleMap } from 'react-google-maps';
+import './geolocation.scss';
 
 export const Geolocation = (props) => {
   const onClick = () =>
@@ -14,7 +10,9 @@ export const Geolocation = (props) => {
 
   return (
     <>
-      <button type="button" onClick={onClick}>Něco</button>
+      <button className="geolocation__button" onClick={onClick} type="button">
+        Moje poloha
+      </button>
     </>
   );
 };

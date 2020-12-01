@@ -10,37 +10,37 @@ export const MapContainer = () => {
     <>
       <div className="mapContainer">
         <button
-          className="mapContainer__button--shelters"
+          className="mapContainer__button"
           onClick={() => {
             setEnabledShelters(true);
             setEnabledFound(false);
             setEnabledLost(false);
           }}
         >
-          Mapa s útulky
+          Útulky
         </button>
         <button
-          className="mapContainer__button--lost"
+          className="mapContainer__button"
           onClick={() => {
             setEnabledLost(true);
             setEnabledShelters(false);
             setEnabledFound(false);
           }}
         >
-          Mapa ztracených zvířat
+          Ztráta
         </button>
         <button
-          className="mapContainer__button--found"
+          className="mapContainer__button"
           onClick={() => {
             setEnabledFound(true);
             setEnabledLost(false);
             setEnabledShelters(false);
           }}
         >
-          Mapa nalezených zvířat
+          Nález
         </button>
         <button
-          className="mapContainer__button--all"
+          className="mapContainer__button mapContainer__button--filter"
           onClick={() => {
             setEnabledShelters(true);
             setEnabledFound(true);
@@ -53,7 +53,7 @@ export const MapContainer = () => {
 
       <div
         className="mapContainer__component"
-        style={{ width: '80vw', height: '400px' }}
+        style={{ width: '100%', height: '400px' }}
       >
         <MapHome
           googleMapURL={
