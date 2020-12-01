@@ -14,7 +14,7 @@ export const Geolocation = (props) => {
 
   return (
     <>
-      <button onClick={onClick}>Něco</button>
+      <button type="button" onClick={onClick}>Něco</button>
     </>
   );
 };
