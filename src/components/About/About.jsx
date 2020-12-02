@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.scss';
-import photoM from '../../assets/img/martina.png';
-import photoB from '../../assets/img/barbora.png';
+import photoM from '../../assets/img/martina.jpeg';
+import photoB from '../../assets/img/bara_a_bob.jpeg';
 
 export const About = () => {
   return (
@@ -20,9 +20,11 @@ export const About = () => {
               height="100px"
             />
             <p className="about__info">
-              PetFinder je první opravdu komplexní projekt, na kterém jsem
-              otestovala dosavadní znalosti JS, Reactu, stylování a programovací
-              skills.
+              <em>
+                <b>PetFinder</b>
+              </em>{' '}
+              je první opravdu komplexní projekt, na kterém jsem otestovala
+              dosavadní znalosti JS, Reactu, stylování a programovací skills.
             </p>
             <p className="about__info">
               Ve volných chvílích se chci dále věnovat rozvoji tohoto projektu a
@@ -30,6 +32,32 @@ export const About = () => {
               účet, kde budou moci editovat a mazat jejich vložené záznamy nebo
               dále komunikovat s ostatními uživateli.
             </p>
+            <div className="about__icons">
+              <a
+                className="about__icon"
+                href="https://www.linkedin.com/in/martina~hytychova/"
+                target="blank"
+                rel="noopener"
+              >
+                <i className="fab fa-linkedin fa-2x"></i>
+              </a>
+              <a
+                className="about__icon"
+                href="https://github.com/MartinaHytychova"
+                target="blank"
+                rel="noopener"
+              >
+                <i className="fab fa-github-square fa-2x"></i>
+              </a>
+              <a
+                className="about__icon"
+                href="https://www.facebook.com/martina.hytychova"
+                target="blank"
+                rel="noopener"
+              >
+                <i className="fab fa-facebook-square fa-2x"></i>
+              </a>
+            </div>
           </div>
           <div className="about__card about__card--second">
             <h2 className="about__person">Barbora Štündlová</h2>
@@ -48,17 +76,19 @@ export const About = () => {
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Praesentium hic aut maiores cupiditate eos quaerat blanditiis
             </p>
+            <div className="about__icons">
+              <a className="about__icon" href="" target="blank" rel="noopener">
+                <i className="fab fa-linkedin fa-2x"></i>
+              </a>
+              <a className="about__icon" href="" target="blank" rel="noopener">
+                <i className="fab fa-github-square fa-2x"></i>
+              </a>
+              <a className="about__icon" href="" target="blank" rel="noopener">
+                <i className="fab fa-facebook-square fa-2x"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <h3 className="about__contact">
-          V případě jakýchkoliv dotazů nás neváhejte kontaktovat na:{' '}
-          <a
-            className="about__email-link"
-            href={'mailto: martina.hyt@gmail.com'}
-          >
-            <span className="about__email">martina.hyt@gmail.com</span>
-          </a>
-        </h3>
       </section>
     </>
   );

@@ -9,7 +9,7 @@
   border-radius: 15px;
   padding: 20px;
   width: 80%;
-  max-width: 700px;
+  max-width: 900px;
   background-color: $color-white;
   margin: 1rem 0 2rem;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -46,13 +46,15 @@
 
   &__card {
     width: 100%;
-    padding: 10px;
+    padding: 10px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 345px;
+    margin-bottom: 20px;
     @include desktop {
       width: calc(100% / 2);
+      min-height: 345px;
+      padding: 10px;
     }
     &--first {
       order: 1;
@@ -63,7 +65,33 @@
     }
   }
 
+  &__info {
+    margin: 10px 0;
+    @include desktop {
+      padding: 0 0 10px 0;
+    }
+  }
+
   &__contact {
     padding: 10px;
+  }
+
+  &__icons {
+    padding: 20px 50px 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  &__icon {
+    padding: 0 0.5rem;
+    text-decoration: none;
+  }
+  .fa-linkedin,
+  .fa-github-square,
+  .fa-facebook-square {
+    color: $color-yellow;
+  }
+  .fab:hover {
+    opacity: 0.8;
   }
 }
