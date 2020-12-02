@@ -60,24 +60,23 @@
 
   &__photo-input {
     border-radius: 25px;
-    width: 154px;
+    width: 200px;
     &::-webkit-file-upload-button {
-      visibility: hidden;
-    }
-    &::before {
-      content: 'Vybrat fotografii';
       display: inline-block;
       border-radius: 25px;
+      width: 200px;
       padding: 10px 20px;
       color: $color-black;
+      font-family: $comfortaa;
+      background-color: $color-white;
       border: 1.5px solid $color-yellow;
       outline: none;
       cursor: pointer;
       @include font-size(16px);
-    }
-    &:hover,
-    &:focus {
-      background-color: rgba(255, 186, 0, 0.1);
+      &:hover,
+      &:focus {
+        background-color: rgba(255, 186, 0, 0.1);
+      }
     }
   }
 
@@ -94,8 +93,13 @@
     margin: 3px 0 3px 0;
   }
 
+  &__amount {
+    margin-right: 10px;
+  }
+
   &__type-input,
   &__phone,
+  &__amount,
   &__email,
   &__date {
     padding: 10px 20px;

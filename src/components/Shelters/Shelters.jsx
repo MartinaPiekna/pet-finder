@@ -18,8 +18,8 @@ export const Shelters = () => {
         <h1 className="shelters__title">Seznam útulků v ČR</h1>
         <hr className="shelters__divider" />
         {currentShelters.map((shelter) => (
-          <>
-            <div className="shelters__card" key={shelter.id}>
+          <div className="shelters__wrapper" key={shelter.id}>
+            <div className="shelters__card">
               <h2 className="shelters__name"> 🐶 {shelter.nazev}</h2>
               <h3 className="shelters__location">📍 {shelter.okres}</h3>
               <p className="shelters__address">🏡 {shelter.adresa}</p>
@@ -30,7 +30,7 @@ export const Shelters = () => {
               <p className="shelters__open-hours">🕘 {shelter.provozni_doba}</p>
             </div>
             <hr className="shelters__divider--small" />
-          </>
+          </div>
         ))}
       </div>
       <Pagination

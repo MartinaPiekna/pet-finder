@@ -1,2 +1,69 @@
 @import '../../assets/variables.scss';
 @import '../../assets/mixins.scss';
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+  background-color: $color-white;
+  margin: 1rem 0 2rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  &__title {
+    margin: 1rem;
+    @include font-size(22px);
+    text-align: center;
+    @include desktop {
+      @include font-size(28px);
+    }
+  }
+
+  &__divider {
+    width: 70%;
+    border: 2px solid $color-yellow;
+    margin-bottom: 30px;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    margin: 10px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @include desktop {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 345px;
+    @include desktop {
+      width: calc(100% / 2);
+    }
+    &--first {
+      order: 1;
+    }
+
+    &--second {
+      order: 2;
+    }
+  }
+
+  &__contact {
+    padding: 10px;
+  }
+}

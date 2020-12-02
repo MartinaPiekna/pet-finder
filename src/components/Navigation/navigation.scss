@@ -101,11 +101,11 @@
     &:hover,
     &:focus {
       color: $color-greenDark;
-      background-color: $color-yellow;
     }
     @include desktop {
       &:hover,
       &:focus {
+        color: $color-white;
         &:before {
           content: '';
           top: -10px;

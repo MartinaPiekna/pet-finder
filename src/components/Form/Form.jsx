@@ -18,6 +18,7 @@ export const Form = () => {
     description: '',
     type: '',
     phone: '',
+    amount: '',
     email: '',
     date: '',
     urlImage: '',
@@ -248,7 +249,7 @@ export const Form = () => {
             placeholder="Zde popište vaše ztracené zvíře..."
             required
           />
-          {record.typeOfRecord === 'lost' ? (
+          {record.typeOfRecord === 'found' ? (
             <div className="form__shelters">
               <label className="form__label" htmlFor="shelter">
                 Útulek:
@@ -288,7 +289,33 @@ export const Form = () => {
                 mapě.
               </em>
             </div>
-          ) : null}
+          ) : (
+            <>
+              <label className="form__label" htmlFor="number">
+                Nálezné:{' '}
+              </label>
+              <div>
+                <input
+                  className="form__amount"
+                  id="amoount"
+                  name="amount"
+                  type="number"
+                  name="amount"
+                  onChange={(e) => {
+                    const amount = e.target.value;
+                    setSaveRecord((record) => ({
+                      ...record,
+                      amount,
+                    }));
+                  }}
+                  pattern="[0-9]"
+                  placeholder="1000"
+                  autoComplete="on"
+                />
+                Kč
+              </div>
+            </>
+          )}
           <label className="form__label-map" htmlFor="map">
             Vyberte místo na mapě:
           </label>
