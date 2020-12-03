@@ -10,7 +10,7 @@ import { Geolocation } from '../Geolocation/Geolocation.jsx';
 export const Form = () => {
   const [progress, setProgress] = useState(0);
   const [checked, setChecked] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [selected] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [submit, setSubmit] = useState(false);
   const [record, setSaveRecord] = useState({
@@ -210,6 +210,7 @@ export const Form = () => {
               type="text"
               id="name"
               name="type"
+              maxLength={10}
               onChange={(e) => {
                 const type = e.target.value;
                 setSaveRecord((record) => ({
@@ -245,7 +246,7 @@ export const Form = () => {
                 description,
               }));
             }}
-            maxLength="300"
+            maxLength={300}
             placeholder="Zde popište vaše ztracené zvíře..."
             required
           />

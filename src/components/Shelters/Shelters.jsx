@@ -37,6 +37,7 @@ export const Shelters = () => {
         sheltersPerPage={sheltersPerPage}
         total={shelters.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );

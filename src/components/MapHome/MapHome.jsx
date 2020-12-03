@@ -122,6 +122,7 @@ export const MapHome = withScriptjs(
                 imageSource={selectedRecord.urlImage}
                 title={selectedRecord.type}
                 description={selectedRecord.description}
+                typeOfRecord={selectedRecord.typeOfRecord}
               >
                 <Link
                   to={`/detail/${selectedRecord.id}`}
@@ -134,7 +135,7 @@ export const MapHome = withScriptjs(
                     display: 'block',
                   }}
                 >
-                  Podrobnosti
+                  Více informací
                 </Link>
               </InfoPopup>
             )}

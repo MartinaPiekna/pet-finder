@@ -44,38 +44,47 @@ export const Information = () => {
                 : 'information__section information__section--hidden'
             }
           >
-            <ul>
-              <li>
+            <ul className="information__list">
+              <li className="information__item">
                 Zůstaňte 2-3h na místě ztráty a pravidelně kontrolujte místo,
                 kde se vám zvíře ztratilo.
               </li>
-              <li>
+              <li className="information__item">
                 Kontaktujte Městskou policii i Policii České republiky, odchyt
                 psů zajišťuje ta městská.
               </li>
-              <li>
+              <li className="information__item">
                 Informujte okolní útulky, veterinární kliniky, myslivecká
                 sdružení, technické služby s fotografií nebo popisem vašeho
                 ztraceného zvířete,
               </li>
-              <li>nebo přímo navštivte nejbližší útulek.</li>
-              <li>
+              <li className="information__item">
+                nebo přímo navštivte nejbližší útulek.
+              </li>
+              <li className="information__item">
                 Pokud je vaše zvíře čipované, kontaktujte{' '}
-                <a href="https://www.narodniregistr.cz/" target="blank">
+                <a
+                  className="information__link"
+                  href="https://www.narodniregistr.cz/"
+                  target="_blank"
+                  re="noreferrer noopener"
+                >
                   Národní registr majitelů čipovaných zvířat
                 </a>{' '}
                 a ztrátu nahlašte.
               </li>
-              <li>
+              <li className="information__item">
                 Zavolejte na městský nebo obecní úřad a zjistěte, zda v místě
                 ztráty neproběhl odchyt zvířat a vaše zvíře nezmizelo tímto
                 způsobem.
               </li>
-              <li>
+              <li className="information__item">
                 Na frekventovaná místa v okolí ztráty můžete vylepit plakáty s
                 fotkou zvířete.
               </li>
-              <li>Pomoci vám může také vypsání odměny.</li>
+              <li className="information__item">
+                Pomoci vám může také vypsání odměny.
+              </li>
             </ul>
           </article>
           <article
@@ -85,26 +94,25 @@ export const Information = () => {
                 : 'information__section information__section--hidden'
             }
           >
-            <ul>
-              <li>
-                <li>
-                  Pokud zvíře není agresivní a nebojí se vás, podívejte se,
-                  jestli má obojek se známkou nebo se pokuste najít jinou formu jeho identifikace.
-                </li>
-                <li>
-                  Zvíře může být očipované, vezměte jej k nejbližšímu veternáři{' '}
-                </li>
+            <ul className="information__list">
+              <li className="information__item">
+                Pokud zvíře není agresivní a nebojí se vás, podívejte se, jestli
+                má obojek se známkou nebo se pokuste najít jinou formu jeho
+                identifikace.
               </li>
-              <li>nebo jej dovezte do nejbližšího útulku.</li>
-              <li>
-                <li>
-                  Pokud zvíře nespolupracuje a vy vidíte, že je opravdu
-                  zatoulané, zavolejte pomocnou odchytovou službu.
-                </li>
-                <li>
-                  Dejte o nálezu zvířete vědět svému okolí - jak na místě, tak
-                  prostřednictvím internetu.
-                </li>
+              <li className="information__item">
+                Zvíře může být očipované, vezměte jej k nejbližšímu veternáři{' '}
+              </li>
+              <li className="information__item">
+                nebo jej dovezte do nejbližšího útulku.
+              </li>
+              <li className="information__item">
+                Pokud zvíře nespolupracuje a vy vidíte, že je opravdu zatoulané,
+                zavolejte pomocnou odchytovou službu.
+              </li>
+              <li className="information__item">
+                Dejte o nálezu zvířete vědět svému okolí - jak na místě, tak
+                prostřednictvím internetu.
               </li>
             </ul>
           </article>

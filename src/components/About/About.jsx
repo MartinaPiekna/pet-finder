@@ -77,7 +77,7 @@ export const About = () => {
               zvířata.
             </p>
             <p className="about__info">
-              Dalším krokem ve vývoij této webové aplikace by mohlo být také
+              Dalším krokem ve vývoji této webové aplikace by mohlo být také
               vygenerování nejbližších útulků podle lokace uživatele nebo
               možnost vkládání komentářů o úspěšném nalezení/předání ztraceného
               mazlíčka.

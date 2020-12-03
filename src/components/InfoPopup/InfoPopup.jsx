@@ -9,7 +9,17 @@ export const InfoPopup = ({
   imageSource,
   title,
   description,
+  typeOfRecord,
 }) => {
+  const maxCharDescription = description.slice(0, 30);
+  let type = '';
+  if (typeOfRecord === 'found') {
+    type = 'Nalezeno';
+  } else if (typeOfRecord === 'lost') {
+    type = 'Ztraceno';
+  } else {
+    type = null;
+  }
   return (
     <InfoWindow
       position={{
@@ -20,7 +30,18 @@ export const InfoPopup = ({
         onClose();
       }}
     >
-      <div style={{ width: '200px', height: '120px' }}>
+      <div style={{ width: '220px', height: '150px' }}>
+        <p
+          style={{
+            margin: '5px auto',
+            display: 'block',
+            textAlign: 'center',
+            color: '#6d9773',
+            fontWeight: 'bold',
+          }}
+        >
+          {type}
+        </p>
         <img
           src={imageSource ? imageSource : empty}
           alt="logo"
@@ -34,7 +55,7 @@ export const InfoPopup = ({
         <p
           style={{ margin: '0 0 10px', textAlign: 'center', fontSize: '16px' }}
         >
-          {description}
+          {maxCharDescription}
         </p>
         {children}
       </div>
