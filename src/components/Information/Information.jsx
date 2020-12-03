@@ -61,7 +61,7 @@ export const Information = () => {
               <li>nebo přímo navštivte nejbližší útulek.</li>
               <li>
                 Pokud je vaše zvíře čipované, kontaktujte{' '}
-                <a href="https://www.narodniregistr.cz/">
+                <a href="https://www.narodniregistr.cz/" target="blank">
                   Národní registr majitelů čipovaných zvířat
                 </a>{' '}
                 a ztrátu nahlašte.
