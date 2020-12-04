@@ -11,7 +11,7 @@ export const Navigation = () => {
 
   return (
     <>
-      <nav className="navigation">
+      <nav className="navigation" aria-label="Paginator">
         <div className="navigation__logo">
           <Link to="/" className="navigation__name">
             <img

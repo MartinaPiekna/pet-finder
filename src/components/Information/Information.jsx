@@ -71,7 +71,8 @@ export const Information = () => {
               <div className="information__text"><img src={building}/>nebo přímo navštivte nejbližší útulek.</div>
               <div className="information__text"><img src={cpu}/>
                 <p>Pokud je vaše zvíře čipované, kontaktujte{' '}
-                <a href="https://www.narodniregistr.cz/" target="blank">
+                <a href="https://www.narodniregistr.cz/" target="_blank"
+                  re="noreferrer noopener">
                   Národní registr majitelů čipovaných zvířat
                 </a>{' '}
                 a ztrátu nahlašte.</p>
