@@ -83,14 +83,16 @@
 
   &__text {
     display: flex;
+    margin: 10px;
     align-items: center;
   }
-}
 
 img {
-  width:60px;
-  height: 60px;
-  margin: 10px;
+  margin-right: 10px;
 }
+}
+
+
+
 
 
