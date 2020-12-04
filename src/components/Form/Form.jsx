@@ -300,6 +300,7 @@ export const Form = () => {
                   id="amoount"
                   name="amount"
                   type="number"
+                  min="0"
                   name="amount"
                   onChange={(e) => {
                     const amount = e.target.value;

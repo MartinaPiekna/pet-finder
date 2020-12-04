@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.scss';
 import logo from '../../assets/img/location.svg';
@@ -8,6 +8,7 @@ export const Navigation = () => {
   const handleClick = () => {
     setOpened(!opened);
   };
+
   return (
     <>
       <nav className="navigation">
