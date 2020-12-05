@@ -70,10 +70,11 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-              <img src={building} />
+                <img src={building} />
                 <p>
-                  Informujte okolní útulky, veterináře a myslivecká
-                  sdružení, s fotografií nebo popisem vašeho ztraceného zvířete nebo přímo navštivte nejbližší útulek.
+                  Informujte okolní útulky, veterináře a myslivecká sdružení, s
+                  fotografií nebo popisem vašeho ztraceného zvířete nebo přímo
+                  navštivte nejbližší útulek.
                 </p>
               </div>
               <div className="information__text">

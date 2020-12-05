@@ -12,8 +12,6 @@ export const Pagination = ({
     pageNumbers.push(i);
   }
 
-  console.log(currentPage);
-
   return (
     <nav className="pagination" aria-label="Paginator">
       <ul className="pagination__list">
