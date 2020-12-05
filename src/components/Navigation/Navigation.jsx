@@ -1,16 +1,11 @@
-import React  from "react";
-import { Link } from "react-router-dom";
-import useComponentVisible from "./useComponentVisible";
-import "./navigation.scss";
-import logo from "../../assets/img/location.svg";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Menu from '../Menu/Menu.jsx';
+import './navigation.scss';
+import logo from '../../assets/icons/location.svg';
 
 export const Navigation = () => {
-  const {
-    ref,
-    isComponentVisible,
-    setIsComponentVisible,
-  } = useComponentVisible(false);
+  const { ref, isComponentVisible, setIsComponentVisible } = Menu(false);
 
   return (
     <>
@@ -28,8 +23,7 @@ export const Navigation = () => {
           </Link>
         </div>
 
-       <div ref={ref} className="navigation__mobile">
-
+        <div ref={ref} className="navigation__mobile--hidden">
           {isComponentVisible && (
             <>
               <div className="navigation__mobile-menu">
@@ -53,7 +47,6 @@ export const Navigation = () => {
                 </Link>
                 <Link to="/about" className="navigation__link">
                   <li className="navigation__item">O nás</li>
-
                 </Link>
               </ul>
             </>
@@ -66,32 +59,26 @@ export const Navigation = () => {
             ></button>
           )}
         </div>
-        
- <div className="navigation__desktop">
-        
-        <ul
-          className='navigation__list'
-          
-        >
-          <Link to="/" className="navigation__link">
-            <li className="navigation__item">Mapa</li>
-          </Link>
-          <Link to="/new" className="navigation__link">
-            <li className="navigation__item">Přidat</li>
-          </Link>
-          <Link to="/shelters" className="navigation__link">
-            <li className="navigation__item">Útulky</li>
-          </Link>
-          <Link to="/info" className="navigation__link">
-            <li className="navigation__item">Rady a tipy</li>
-          </Link>
-          <Link to="/about" className="navigation__link">
-            <li className="navigation__item">O nás</li>
-          </Link>
-        </ul>
 
-</div> 
-        
+        <div className="navigation__desktop--hidden">
+          <ul className="navigation__list">
+            <Link to="/" className="navigation__link">
+              <li className="navigation__item">Mapa</li>
+            </Link>
+            <Link to="/new" className="navigation__link">
+              <li className="navigation__item">Přidat</li>
+            </Link>
+            <Link to="/shelters" className="navigation__link">
+              <li className="navigation__item">Útulky</li>
+            </Link>
+            <Link to="/info" className="navigation__link">
+              <li className="navigation__item">Rady a tipy</li>
+            </Link>
+            <Link to="/about" className="navigation__link">
+              <li className="navigation__item">O nás</li>
+            </Link>
+          </ul>
+        </div>
       </nav>
     </>
   );

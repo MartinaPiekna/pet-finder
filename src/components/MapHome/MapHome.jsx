@@ -7,9 +7,9 @@ import {
 } from 'react-google-maps';
 import './mapHome.scss';
 import shelters from '../../data/utulky.json';
-import lost from '../../assets/img/location_lost.svg';
-import found from '../../assets/img/location_found.svg';
-import shelterIcon from '../../assets/img/pet-house_color.svg';
+import lost from '../../assets/icons/location_lost.svg';
+import found from '../../assets/icons/location_found.svg';
+import shelterIcon from '../../assets/icons/pet-house_color.svg';
 import { db } from '../../db.js';
 import { Link } from 'react-router-dom';
 import { InfoPopup } from '../InfoPopup/InfoPopup';

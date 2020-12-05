@@ -1,6 +1,6 @@
 import React from 'react';
 import { InfoWindow } from 'react-google-maps';
-import empty from '../../assets/img/empty_image.svg';
+import empty from '../../assets/icons/empty_image.svg';
 
 export const InfoPopup = ({
   children,

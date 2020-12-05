@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './detail.scss';
 import { db } from '../../db.js';
-import emptyImage from '../../assets/img/empty_image.svg';
+import emptyImage from '../../assets/icons/empty_image.svg';
 
 export const Detail = () => {
   const [record, setRecord] = useState([]);

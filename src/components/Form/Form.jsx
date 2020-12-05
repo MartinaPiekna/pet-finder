@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import shelters from '../../data/utulky.json';
 import './form.scss';
 import { db, storage } from '../../db.js';
-import emptyImage from '../../assets/img/empty_image.svg';
+import emptyImage from '../../assets/icons/empty_image.svg';
 import { MapForm } from '../MapForm/MapForm.jsx';
 import { Geolocation } from '../Geolocation/Geolocation.jsx';
 

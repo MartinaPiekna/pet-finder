@@ -5,7 +5,7 @@ import {
   withScriptjs,
   Marker,
 } from 'react-google-maps';
-import lost from '../../assets/img/location_lost.svg';
+import lost from '../../assets/icons/location_lost.svg';
 
 export const MapForm = withScriptjs(
   withGoogleMap(({ onChangePosition, defaultPosition }) => {

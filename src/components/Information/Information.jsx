@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import './information.scss';
-import banknote from '../../assets/img/icons/banknote.svg';
-import building from '../../assets/img/icons/building.svg';
-import cat from '../../assets/img/icons/cat.svg';
-import cpu from '../../assets/img/icons/cpu.svg';
-import globe from '../../assets/img/icons/globe.svg';
-import link from '../../assets/img/icons/link.svg';
-import medical from '../../assets/img/icons/medical.svg';
-import police from '../../assets/img/icons/police.svg';
-import tag from '../../assets/img/icons/tag.svg';
-import tree from '../../assets/img/icons/tree.svg';
+import banknote from '../../assets/icons/banknote.svg';
+import building from '../../assets/icons/building.svg';
+import cat from '../../assets/icons/cat.svg';
+import cpu from '../../assets/icons/cpu.svg';
+import globe from '../../assets/icons/globe.svg';
+import net from '../../assets/icons/net.svg';
+import police from '../../assets/icons/police.svg';
+import tag from '../../assets/icons/tag.svg';
+import tree from '../../assets/icons/tree.svg';
 
 export const Information = () => {
   const [visible, setVisible] = useState([true, false]);
@@ -65,15 +64,15 @@ export const Information = () => {
               <div className="information__text">
                 <img src={police} />
                 <p>
-                  Kontaktujte Městskou policii i Policii České republiky, odchyt
-                  psů zajišťuje ta městská.
+                  Kontaktujte Městskou policii, která zajišťuje odchyt psů a
+                  jejich převoz do útulků.
                 </p>
               </div>
               <div className="information__text">
                 <img src={building} />
                 <p>
                   Informujte okolní útulky, veterináře a myslivecká sdružení, s
-                  fotografií nebo popisem vašeho ztraceného zvířete nebo přímo
+                  fotografií a popisem vašeho ztraceného zvířete nebo přímo
                   navštivte nejbližší útulek.
                 </p>
               </div>
@@ -93,10 +92,10 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-                <img src={link} />
+                <img src={net} />
                 <p>
                   Zavolejte na městský nebo obecní úřad a zjistěte, zda v místě
-                  ztráty neproběhl odchyt zvířat a vaše zvíře nezmizelo tímto
+                  ztráty neproběhl odchyt zvířat a váš mazlíček nezmizel tímto
                   způsobem.
                 </p>
               </div>
@@ -130,19 +129,20 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-                <img src={medical} />
+                <img src={cpu} />
                 <p>
-                  Zvíře může být očipované, vezměte jej k nejbližšímu veternáři{' '}
+                  Zvíře může být očipované, vezměte jej k nejbližšímu
+                  veterináři.{' '}
                 </p>
               </div>
             </div>
             <div className="information__text">
-              <img src={building} />
-              <p>nebo jej dovezte do nejbližšího útulku.</p>
+              <img src={building} alt="ikona domečku" />
+              <p>Případně jej dovezte do nejbližšího útulku.</p>
             </div>
             <div>
               <div className="information__text">
-                <img src={link} />
+                <img src={net} />
                 <p>
                   Pokud zvíře nespolupracuje a vy vidíte, že je opravdu
                   zatoulané, zavolejte pomocnou odchytovou službu.
