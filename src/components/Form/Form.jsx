@@ -29,7 +29,6 @@ export const Form = () => {
   });
 
   const types = ['pes', 'kočka', 'ptactvo'];
-  const regexp = /[a-zA-Z]/gi;
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
 
   let history = useHistory();
@@ -94,6 +93,7 @@ export const Form = () => {
                 }));
               }}
               required
+              checked
             />
             <label className="form__switch-label" htmlFor="lost">
               Ztratil/a jsem

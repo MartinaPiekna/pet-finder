@@ -4,6 +4,7 @@ import useComponentVisible from "./useComponentVisible";
 import "./navigation.scss";
 import logo from "../../assets/img/location.svg";
 
+
 export const Navigation = () => {
   const {
     ref,

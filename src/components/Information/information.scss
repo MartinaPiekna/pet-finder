@@ -3,7 +3,7 @@
 
 .information {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   border-radius: 15px;
@@ -11,9 +11,16 @@
   width: 75%;
   max-width: 700px;
   font-family: $comfortaa;
+  min-height: 560px;
   background-color: $color-white;
   margin: 1rem 0 2rem;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  @include tablet {
+    max-height: 360px;
+  }
+  @include desktop {
+    max-height: 360px;
+  }
 
   &__container {
     margin-bottom: 10px;
@@ -79,6 +86,12 @@
     &--hidden {
       display: none;
     }
+    @include tablet {
+      height: 560px;
+    }
+    @include desktop {
+      height: 555px;
+    }
   }
 
   &__text {
@@ -87,12 +100,15 @@
     align-items: center;
   }
 
-img {
-  margin-right: 10px;
+  &__link {
+    color: $color-black;
+    &:hover,
+    &:focus {
+      color: $color-greenLight;
+    }
+  }
+
+  img {
+    margin-right: 10px;
+  }
 }
-}
-
-
-
-
-

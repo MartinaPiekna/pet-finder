@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './detail.scss';
 import { db } from '../../db.js';
 import emptyImage from '../../assets/img/empty_image.svg';
@@ -86,6 +87,9 @@ export const Detail = () => {
       <h1 className="detail__headline">Detail záznamu</h1>
       <hr className="detail__divider" />
       {content}
+      <Link to="/" className="navigation__link">
+        <p className="detail__link-homepage">Zpět na úvodní stránku</p>
+      </Link>
     </section>
   );
 };
