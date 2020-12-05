@@ -131,7 +131,7 @@ export const MapHome = withScriptjs(
                     fontSize: '16px',
                     fontWeight: 'bold',
                     textDecoration: 'none',
-                    color: '#b46617',
+                    color: '#6d9773',
                     display: 'block',
                   }}
                 >

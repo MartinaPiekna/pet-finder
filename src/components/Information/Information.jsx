@@ -82,6 +82,7 @@ export const Information = () => {
                 <p>
                   Pokud je vaše zvíře čipované, kontaktujte{' '}
                   <a
+                    className="information__link"
                     href="https://www.narodniregistr.cz/"
                     target="_blank"
                     re="noreferrer noopener"

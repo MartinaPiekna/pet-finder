@@ -78,4 +78,25 @@
       @include font-size(18px);
     }
   }
+
+  &__link-homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    width: 200px;
+    margin: 30px 0;
+    background-color: $color-white;
+    border: 1px solid $color-yellow;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: $comfortaa;
+    color: $color-black;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: $color-yellow;
+    }
+  }
 }
