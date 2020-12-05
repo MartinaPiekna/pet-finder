@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './navigation.scss';
-import logo from '../../assets/img/location.svg';
+import React  from "react";
+import { Link } from "react-router-dom";
+import useComponentVisible from "./useComponentVisible";
+import "./navigation.scss";
+import logo from "../../assets/img/location.svg";
 
 export const Navigation = () => {
-  const [opened, setOpened] = useState(false);
-  const handleClick = () => {
-    setOpened(!opened);
-  };
+  const {
+    ref,
+    isComponentVisible,
+    setIsComponentVisible,
+  } = useComponentVisible(false);
 
   return (
     <>
@@ -24,19 +26,51 @@ export const Navigation = () => {
             <span>Pet Finder</span>
           </Link>
         </div>
-        <div className="navigation__mobile-menu">
-          <button
-            onClick={(opened) => handleClick(opened)}
-            className="navigation__hamburger"
-            tabIndex="-1"
-          ></button>
+
+       <div ref={ref} className="navigation__mobile">
+
+          {isComponentVisible && (
+            <>
+              <div className="navigation__mobile-menu">
+                <button
+                  className="navigation__hamburger"
+                  tabIndex="-1"
+                ></button>
+              </div>
+              <ul className="navigation__list">
+                <Link to="/" className="navigation__link">
+                  <li className="navigation__item">Mapa</li>
+                </Link>
+                <Link to="/new" className="navigation__link">
+                  <li className="navigation__item">Přidat</li>
+                </Link>
+                <Link to="/shelters" className="navigation__link">
+                  <li className="navigation__item">Útulky</li>
+                </Link>
+                <Link to="/info" className="navigation__link">
+                  <li className="navigation__item">Rady a tipy</li>
+                </Link>
+                <Link to="/about" className="navigation__link">
+                  <li className="navigation__item">O nás</li>
+
+                </Link>
+              </ul>
+            </>
+          )}
+          {!isComponentVisible && (
+            <button
+              className="navigation__hamburger"
+              tabIndex="-1"
+              onClick={() => setIsComponentVisible(true)}
+            ></button>
+          )}
         </div>
+        
+ <div className="navigation__desktop">
+        
         <ul
-          className={
-            opened
-              ? 'navigation__list'
-              : 'navigation__list navigation__list--closed '
-          }
+          className='navigation__list'
+          
         >
           <Link to="/" className="navigation__link">
             <li className="navigation__item">Mapa</li>
@@ -54,6 +88,9 @@ export const Navigation = () => {
             <li className="navigation__item">O nás</li>
           </Link>
         </ul>
+
+</div> 
+        
       </nav>
     </>
   );
