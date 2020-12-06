@@ -35,7 +35,7 @@ export const MapHome = withScriptjs(
     return (
       <>
         <div>
-          <GoogleMap defaultZoom={8} defaultCenter={{ lat: 50.0, lng: 15.5 }}>
+          <GoogleMap defaultZoom={7} defaultCenter={{ lat: 50.0, lng: 15.5 }}>
             {shelters.map((shelter) => (
               <Marker
                 visible={props.enabledShelters}
