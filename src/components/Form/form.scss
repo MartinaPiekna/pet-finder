@@ -105,6 +105,7 @@
     padding: 10px 20px;
     border-radius: 25px;
     border: 1.5px solid $color-yellow;
+    min-width: 145px;
   }
 
   &__types,
@@ -192,7 +193,7 @@
     height: 15px;
     border-radius: 15px;
     top: -2px;
-    left: -4px;
+    left: -2px;
     margin-right: 5px;
     position: relative;
     background-color: $color-white;
@@ -201,6 +202,9 @@
     visibility: visible;
     border: 1.5px solid$color-yellow;
     cursor: pointer;
+    @include desktop {
+      left: -4px;
+    }
   }
 
   input[type='radio']:checked:after {

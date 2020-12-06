@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function Menu(initialIsVisible) {
+export const Menu = (initialIsVisible) => {
   const [isComponentVisible, setIsComponentVisible] = useState(
     initialIsVisible,
   );
@@ -20,4 +20,4 @@ export default function Menu(initialIsVisible) {
   });
 
   return { ref, isComponentVisible, setIsComponentVisible };
-}
+};
