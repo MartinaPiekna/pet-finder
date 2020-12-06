@@ -214,6 +214,11 @@
       left: -4px;
       top: -2px;
     }
+    @media not all and (min-resolution: 0.001dpcm) {
+      @include desktop {
+        top: -5px;
+      }
+    }
   }
 
   input[type='radio']:checked:after {
@@ -231,6 +236,11 @@
     @include desktop {
       left: -4px;
       top: -2px;
+    }
+    @media not all and (min-resolution: 0.001dpcm) {
+      @include desktop {
+        top: -5px;
+      }
     }
   }
 
