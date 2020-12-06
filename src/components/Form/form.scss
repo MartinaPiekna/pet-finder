@@ -192,8 +192,8 @@
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: -2px;
-    left: -2px;
+    top: 0px;
+    left: 0px;
     margin-right: 5px;
     position: relative;
     background-color: $color-white;
@@ -204,6 +204,7 @@
     cursor: pointer;
     @include desktop {
       left: -4px;
+      top: -2px;
     }
   }
 
@@ -211,14 +212,18 @@
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: -2px;
-    left: -4px;
+    top: 0px;
+    left: 0px;
     position: relative;
     background-color: $color-yellow;
     content: '';
     display: inline-block;
     visibility: visible;
     border: 1.5px solid$color-yellow;
+    @include desktop {
+      left: -4px;
+      top: -2px;
+    }
   }
 
   textarea {
