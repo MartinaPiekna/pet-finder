@@ -93,7 +93,6 @@ export const Form = () => {
                 }));
               }}
               required
-              checked
             />
             <label className="form__switch-label" htmlFor="lost">
               Ztratil/a jsem
