@@ -100,5 +100,10 @@
       background-color: $color-yellow;
       transition: 0.3s;
     }
+    @include desktop {
+      @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
+        width: 210px;
+      }
+    }
   }
 }
