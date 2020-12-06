@@ -192,8 +192,8 @@
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: 0px;
-    left: 0px;
+    top: -1px;
+    left: -1px;
     margin-right: 5px;
     position: relative;
     background-color: $color-white;
@@ -212,8 +212,8 @@
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: 0px;
-    left: 0px;
+    top: -1px;
+    left: -1px;
     position: relative;
     background-color: $color-yellow;
     content: '';
