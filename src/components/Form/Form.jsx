@@ -381,8 +381,8 @@ export const Form = () => {
                 phone,
               }));
             }}
-            pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
-            placeholder="123 456 789"
+            pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+            placeholder="123456789"
             autoComplete="on"
           />
           <label className="form__label" htmlFor="email">
