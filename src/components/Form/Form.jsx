@@ -268,7 +268,6 @@ export const Form = () => {
                     ...record,
                     shelter,
                   }));
-                  console.log(shelter);
                 }}
               >
                 <option
@@ -286,7 +285,7 @@ export const Form = () => {
                   <option
                     className="form__shelter-option"
                     key={shelter.id}
-                    value={shelter.id}
+                    value={shelter.nazev}
                   >
                     {shelter.nazev}
                   </option>
