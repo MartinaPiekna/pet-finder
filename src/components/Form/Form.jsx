@@ -29,7 +29,6 @@ export const Form = () => {
   });
 
   const types = ['pes', 'kočka', 'ptactvo'];
-  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
 
   let history = useHistory();
 
@@ -394,7 +393,6 @@ export const Form = () => {
             type="email"
             name="email"
             id="email"
-            pattern={emailRegex}
             onChange={(e) => {
               const email = e.target.value;
               setSaveRecord((record) => ({
