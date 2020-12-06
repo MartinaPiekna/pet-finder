@@ -240,7 +240,7 @@
 
   select,
   textarea,
-  input[type='datetime-local'],
+  input[type='date'],
   input[type='tel'],
   input[type='email'],
   input[type='file'] {
@@ -250,17 +250,17 @@
     }
   }
 
-  input[type='datetime-local']::-webkit-inner-spin-button {
+  input[type='date']::-webkit-inner-spin-button {
     display: none;
   }
 
-  input[type='datetime-local']::-webkit-calendar-picker-indicator {
+  input[type='date']::-webkit-calendar-picker-indicator {
     opacity: 0;
     cursor: pointer;
     margin-left: -25px;
   }
 
-  input[type='datetime-local'] {
+  input[type='date'] {
     font-family: $comfortaa;
     color: $color-gray;
     height: 15px;
