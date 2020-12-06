@@ -31,6 +31,14 @@ export const Detail = () => {
   if (loading === 'loading') {
     content = <h2 className="detail__loading">Načítám...⏳</h2>;
   } else if (loading === 'success') {
+    const checkDate = (date) => {
+      const year = date.substring(0, 4);
+      const month = date.substring(5, 7);
+      const day = date.substring(8, 10);
+      const newDate = `${day}. ${month}. ${year}`;
+      console.log(newDate);
+      return newDate;
+    };
     content = (
       <div className="detail__container">
         <figure className="detail__figure">
@@ -81,9 +89,9 @@ export const Detail = () => {
         </div>
         <div className="detail__wrapper">
           <span className="detail__name">Datum ohlášení: </span>
-          <time className="detail__date" dateTime={record.date}>
-            {record.date}
-          </time>
+          <span className="detail__date" date={record.date}>
+            {checkDate(record.date)}
+          </span>
         </div>
       </div>
     );

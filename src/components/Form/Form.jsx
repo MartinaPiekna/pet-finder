@@ -412,14 +412,14 @@ export const Form = () => {
             autoComplete="on"
             required
           />
-          <label className="form__label" htmlFor="datetime-local">
+          <label className="form__label" htmlFor="date">
             Datum ztráty:{' '}
           </label>
           <input
             className={
               submit ? 'form__date form__input--invalid' : 'form__date'
             }
-            type="datetime-local"
+            type="date"
             name="date"
             id="date"
             onChange={(e) => {
