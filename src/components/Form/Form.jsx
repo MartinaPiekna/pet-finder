@@ -422,6 +422,7 @@ export const Form = () => {
             type="date"
             name="date"
             id="date"
+            placeholder="yyyy-mm-dd"
             onChange={(e) => {
               const date = e.target.value;
               setSaveRecord((record) => ({
