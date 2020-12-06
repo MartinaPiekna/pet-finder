@@ -55,21 +55,21 @@ export const Information = () => {
           >
             <div>
               <div className="information__text">
-                <img src={tree} />
+                <img src={tree} alt="ikona stromů" />
                 <p>
                   Zůstaňte 2-3h na místě ztráty a pravidelně kontrolujte místo,
                   kde se vám zvíře ztratilo.
                 </p>
               </div>
               <div className="information__text">
-                <img src={police} />
+                <img src={police} alt="ikona policejni odznak" />
                 <p>
                   Kontaktujte Městskou policii, která zajišťuje odchyt psů a
                   jejich převoz do útulků.
                 </p>
               </div>
               <div className="information__text">
-                <img src={building} />
+                <img src={building} alt="ikona domečku" />
                 <p>
                   Informujte okolní útulky, veterináře a myslivecká sdružení, s
                   fotografií a popisem vašeho ztraceného zvířete nebo přímo
@@ -77,7 +77,7 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-                <img src={cpu} />
+                <img src={cpu} alt="ikona čipu" />
                 <p>
                   Pokud je vaše zvíře čipované, kontaktujte{' '}
                   <a
@@ -92,7 +92,7 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-                <img src={net} />
+                <img src={net} alt="ikona sítě" />
                 <p>
                   Zavolejte na městský nebo obecní úřad a zjistěte, zda v místě
                   ztráty neproběhl odchyt zvířat a váš mazlíček nezmizel tímto
@@ -100,14 +100,14 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-                <img src={cat} />
+                <img src={cat} alt="ikona kočky v ramečku" />
                 <p>
                   Na frekventovaná místa v okolí ztráty můžete vylepit plakáty s
                   fotkou zvířete.
                 </p>
               </div>
               <div className="information__text">
-                <img src={banknote} />
+                <img src={banknote} alt="ikona bankovky" />
                 <p>Pomoci vám může také vypsání odměny.</p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export const Information = () => {
           >
             <div>
               <div className="information__text">
-                <img src={tag} />
+                <img src={tag} alt="ikona štítku" />
                 <p>
                   Pokud zvíře není agresivní a nebojí se vás, podívejte se,
                   jestli má obojek se známkou nebo se pokuste najít jinou formu
@@ -129,7 +129,7 @@ export const Information = () => {
                 </p>
               </div>
               <div className="information__text">
-                <img src={cpu} />
+                <img src={cpu} alt="ikona čipu" />
                 <p>
                   Zvíře může být očipované, vezměte jej k nejbližšímu
                   veterináři.{' '}
@@ -142,14 +142,14 @@ export const Information = () => {
             </div>
             <div>
               <div className="information__text">
-                <img src={net} />
+                <img src={net} alt="ikona sítě" />
                 <p>
                   Pokud zvíře nespolupracuje a vy vidíte, že je opravdu
                   zatoulané, zavolejte pomocnou odchytovou službu.
                 </p>
               </div>
               <div className="information__text">
-                <img src={globe} />
+                <img src={globe} alt="ikona globální" />
                 <p>
                   Dejte o nálezu zvířete vědět svému okolí - jak na místě, tak
                   prostřednictvím internetu.
