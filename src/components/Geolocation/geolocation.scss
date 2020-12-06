@@ -15,6 +15,7 @@
     &:hover,
     &:focus {
       background-color: $color-yellow;
+      transition: 0.3s;
     }
   }
 }

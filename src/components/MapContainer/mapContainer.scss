@@ -28,6 +28,7 @@
     &:hover,
     &:focus {
       background-color: $color-yellow;
+      transition: 0.3s;
     }
     @include tablet {
       margin: 0;

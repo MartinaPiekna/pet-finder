@@ -38,6 +38,7 @@
     &:focus {
       color: $color-black;
       background-color: $color-yellow;
+      transition: 0.3s;
     }
     &--selected {
       color: $color-black;

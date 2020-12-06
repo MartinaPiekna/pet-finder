@@ -101,11 +101,13 @@
     &:hover,
     &:focus {
       color: $color-greenDark;
+      transition: 0.3s;
     }
     @include desktop {
       &:hover,
       &:focus {
         color: $color-white;
+        transition: 0.3s;
         &:before {
           content: '';
           top: -10px;
