@@ -60,6 +60,13 @@ export const Detail = () => {
           </span>
         </div>
         <div className="detail__wrapper">
+          <span className="detail__name">Útulek, kde je zvíře umístěno: </span>
+          <span className="detail__description">
+            {' '}
+            {record.shelter === '' ? 'nevyplněno' : record.shelter}
+          </span>
+        </div>
+        <div className="detail__wrapper">
           <span className="detail__name">Kontaktní e-mail: </span>
           <a className="detail__email-link" href={`mailto:${record.email}`}>
             <span className="detail__email"> {record.email}</span>

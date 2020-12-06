@@ -26,6 +26,7 @@ export const Form = () => {
       latitude: 50.0,
       longitude: 14.5,
     },
+    shelter: '',
   });
 
   const types = ['pes', 'kočka', 'ptactvo'];
@@ -261,6 +262,14 @@ export const Form = () => {
                 }
                 id="shelter"
                 name="shelter"
+                onChange={(e) => {
+                  const shelter = e.target.value;
+                  setSaveRecord((record) => ({
+                    ...record,
+                    shelter,
+                  }));
+                  console.log(shelter);
+                }}
               >
                 <option
                   className={
