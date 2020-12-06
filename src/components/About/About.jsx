@@ -28,15 +28,15 @@ export const About = () => {
             </p>
             <p className="about__info">
               Ve volných chvílích se chci dále věnovat rozvoji tohoto projektu,
-              a&nbsp;to&nbsp;konkrétně uživatelům umožnit vytvořit si vlastní uživatelský
-              účet, kde budou moci editovat a&nbsp;mazat jejich vložené záznamy nebo
-              dále komunikovat s ostatními uživateli.
+              a&nbsp;to&nbsp;konkrétně uživatelům umožnit vytvořit si vlastní
+              uživatelský účet, kde budou moci editovat a&nbsp;mazat jejich
+              vložené záznamy nebo dále komunikovat s ostatními uživateli.
             </p>
             <div className="about__icons">
               <a
                 className="about__icon"
                 href="https://www.linkedin.com/in/martina~hytychova/"
-                target="blank"
+                target="_blank"
                 rel="noopener"
               >
                 <i className="fab fa-linkedin fa-2x"></i>
@@ -44,7 +44,7 @@ export const About = () => {
               <a
                 className="about__icon"
                 href="https://github.com/MartinaHytychova"
-                target="blank"
+                target="_blank"
                 rel="noopener"
               >
                 <i className="fab fa-github-square fa-2x"></i>
@@ -52,7 +52,7 @@ export const About = () => {
               <a
                 className="about__icon"
                 href="https://www.facebook.com/martina.hytychova"
-                target="blank"
+                target="_blank"
                 rel="noopener"
               >
                 <i className="fab fa-facebook-square fa-2x"></i>
@@ -73,19 +73,20 @@ export const About = () => {
                 <b>PetFinder</b>
               </em>{' '}
               je i můj první větší projekt a jsem moc ráda, že je to právě tento
-              projekt. Snoubí totiž dvě z&nbsp;mých zálib - programování a&nbsp;zvířata.
+              projekt. Snoubí totiž dvě z&nbsp;mých zálib - programování
+              a&nbsp;zvířata.
             </p>
             <p className="about__info">
               Dalším krokem ve vývoji této webové aplikace by mohlo být také
               vygenerování nejbližších útulků podle lokace uživatele nebo
-              možnost vkládání komentářů o&nbsp;úspěšném nalezení/předání ztraceného
-              mazlíčka.
+              možnost vkládání komentářů o&nbsp;úspěšném nalezení/předání
+              ztraceného mazlíčka.
             </p>
             <div className="about__icons">
               <a
                 className="about__icon"
                 href="https://www.linkedin.com/in/barbora-st%C3%BCndlov%C3%A1-533198a5/"
-                target="blank"
+                target="_blank"
                 rel="noopener"
               >
                 <i className="fab fa-linkedin fa-2x"></i>
@@ -93,7 +94,7 @@ export const About = () => {
               <a
                 className="about__icon"
                 href="https://github.com/BarboraStundlova"
-                target="blank"
+                target="_blank"
                 rel="noopener"
               >
                 <i className="fab fa-github-square fa-2x"></i>
