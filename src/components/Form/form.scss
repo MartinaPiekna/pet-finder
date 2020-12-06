@@ -91,6 +91,10 @@
     position: relative;
   }
 
+  &__switch-label {
+    cursor: pointer;
+  }
+
   &__photo {
     margin: 3px 0 3px 0;
   }
